@@ -4,109 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claryscope – Contrôle qualité & Visites mystère</title>
-  <link rel="icon" href="https://img.icons8.com/?size=100&id=53594&format=png&color=000000" type="image/png">
   <style>
-    body { margin:0; font-family: Arial, sans-serif; color:#333; background:#f8f9fa; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
     header {
       background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-      color:#fff; text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
-    header h1 { font-size: 48px; margin:0; }
-    header p { font-size: 20px; margin-top:10px; }
-
-    section { padding:60px 20px; max-width:1100px; margin:auto; }
-    h2 { text-align:center; margin-bottom:40px; color:#0d2a4a; }
-
-    .services { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+    header h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+    header p {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #0d2a4a;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
     .card {
-      background:#fff; padding:20px; flex:1 1 300px; border-radius:8px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center;
+      background: #fff;
+      padding: 20px;
+      flex: 1 1 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
-    .card img { width:60px; margin-bottom:15px; }
-    .card h3 { margin:10px 0; }
-
-    .about { text-align:center; line-height:1.6; }
-
-    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
-    .gallery img { width:100%; border-radius:8px; }
-
-    form { max-width:600px; margin:20px auto; display:flex; flex-direction:column; gap:15px; }
-    input, textarea { padding:12px; border:1px solid #ccc; border-radius:6px; }
-    button {
-      background:#0d2a4a; color:#fff; border:none; padding:14px; border-radius:6px;
-      cursor:pointer; font-size:16px;
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
     }
-    button:hover { background:#133a6b; }
-
+    .card h3 {
+      margin: 10px 0;
+    }
+    .about {
+      text-align: center;
+      line-height: 1.6;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
     footer {
-      background:#0d2a4a; color:#fff; text-align:center; padding:20px;
+      background: #0d2a4a;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
     }
-    footer img { width:40px; vertical-align:middle; margin-right:8px; }
   </style>
 </head>
 <body>
+  <header>
+    <h1>CLARYSCOPE</h1>
+    <p>Contrôle qualité & Visites mystère – Suisse romande</p>
+  </header>
 
-<header>
-  <h1>CLARYSCOPE</h1>
-  <p>Contrôle qualité & Visites mystère – Suisse romande</p>
-</header>
-
-<section>
-  <h2>Nos services</h2>
-  <div class="services">
-    <div class="card">
-      <img src="https://img.icons8.com/ios-filled/100/0d2a4a/shopping-bag.png" alt="Retail">
-      <h3>Visites mystère</h3>
-      <p>Retail, concessions automobiles, restauration</p>
+  <section>
+    <h2>Nos services</h2>
+    <div class="services">
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/0d2a4a/inspection.png" alt="Audit">
+        <h3>Visites mystère</h3>
+        <p>Retail, automobile, restauration – évaluez vos points de vente comme un vrai client.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/0d2a4a/checklist.png" alt="Checklist">
+        <h3>Audits qualité</h3>
+        <p>Conformité, propreté, standards de service – suivi clair et précis.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/0d2a4a/training.png" alt="Coaching">
+        <h3>Feedback & Coaching</h3>
+        <p>Accompagnement des équipes avec des retours constructifs.</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://img.icons8.com/ios-filled/100/0d2a4a/inspection.png" alt="Audit">
-      <h3>Audits qualité</h3>
-      <p>Procédures, propreté, conformité aux standards</p>
+  </section>
+
+  <section>
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1580894908361-967195033f6a?auto=format&fit=crop&w=800&q=80" alt="Audit">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Team">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" alt="Coaching">
     </div>
-    <div class="card">
-      <img src="https://img.icons8.com/ios-filled/100/0d2a4a/training.png" alt="Coaching">
-      <h3>Feedback & coaching</h3>
-      <p>Accompagnement et amélioration des équipes</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="about">
-  <h2>À propos</h2>
-  <p>
-    Claryscope accompagne les enseignes et concessions dans l’amélioration de leur qualité de service.
-    Avec une expertise en audits mystères, nous fournissons des rapports détaillés et des conseils pratiques
-    pour optimiser l’expérience client.
-  </p>
-</section>
-
-<section>
-  <h2>Galerie</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80" alt="Audit 1">
-    <img src="https://images.unsplash.com/photo-1556742400-b5d588f1ee61?auto=format&fit=crop&w=800&q=80" alt="Audit 2">
-    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Audit 3">
-  </div>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <form action="https://formspree.io/f/mzzpeknq" method="POST">
-    <input type="text" name="name" placeholder="Votre nom" required>
-    <input type="email" name="email" placeholder="Votre email" required>
-    <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-  <p style="text-align:center;margin-top:10px;">
-    📧 contact@claryscope.ch | 📞 076 270 31 24
-  </p>
-</section>
-
-<footer>
-  <p>© 2025 Claryscope — Tous droits réservés</p>
-</footer>
-
+  <footer>
+    <p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
+    <p>📧 contact@claryscope.ch | 📞 076 270 31 24</p>
+    <p>© 2025 Claryscope — Tous droits réservés</p>
+  </footer>
 </body>
 </html>
