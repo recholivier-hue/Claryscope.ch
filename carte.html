@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zones d’intervention — Claryscope</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <style>
+    :root{
+      --bg:#0d2a4a;        /* bleu foncé de ton site */
+      --card:#ffffff;
+      --text:#222;
+      --yellow:#FFD84D;    /* Suisse entière */
+      --green:#17a34a;     /* Tes secteurs */
+    }
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:#fff;
+    }
+    header{ text-align:center; padding:28px 16px; }
+    header h1{ margin:0 0 6px; font-size:28px; letter-spacing:.5px; }
+    header p{ margin:0; opacity:.9 }
+    .wrap{
+      max-width:1100px; margin:0 auto; padding:20px;
+    }
+    .card{
+      background:var(--card); color:var(--text);
+      border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,.12);
+      padding:18px; margin:16px 0;
+    }
+    #map{
+      width:100%; height:540px;
+    }
+    .legend{
+      display:flex; gap:18px; align-items:center; flex-wrap:wrap; margin-top:8px;
+    }
+    .legend .key{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; background:#f5f7fb; border-radius:10px; font-size:14px;
+    }
+    .sq{ width:16px; height:16px; border-radius:4px; display:inline-block }
+    a.btn{
+      display:inline-block; margin-top:8px; color:#fff; text-decoration:none;
+      background:#0d2a4a; padding:10px 14px; border-radius:10px;
+      border:1px solid rgba(255,255,255,.25)
+    }
+    a.btn:hover{ filter:brightness(1.08) }
+  </style>
+
+  <script>
+    // Charge Google Charts
+    google.charts.load('current', {
+      'packages':['geochart'],
+      // IMPORTANT : on force la locale pour avoir les cantons correctement
+      'mapsApiKey': '' // pas nécessaire pour GeoChart, on peut laisser vide
+    });
+
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+      // Les cantons à colorer (1 = vert dans la colorAxis)
+      const data = google.visualization.arrayToDataTable([
+        ['Region', 'Zone'],
+        ['CH-GE', 1], // Genève
+        ['CH-VD', 1], // Vaud
+        ['CH-VS', 1], // Valais
+        ['CH-FR', 1], // Fribourg
+        ['CH-NE', 1], // Neuchâtel (incl. La Chaux-de-Fonds)
+        ['CH-BE', 1], // Berne (incl. Bienne/Biel)
+      ]);
+
+      const options = {
+        region: 'CH',                 // Pays : Suisse
+        resolution: 'provinces',      // Cantons
+        backgroundColor: 'transparent',
+        datalessRegionColor: '#FFD84D', // JAUNE pour le reste de la Suisse
+        colorAxis: { colors: ['#17a34a'] }, // VERT pour tes secteurs
+        legend: 'none',
+        tooltip: { textStyle: { color: '#222' } }
+      };
+
+      const chart = new google.visualization.GeoChart(document.getElementById('map'));
+      chart.draw(data, options);
+
+      // Rend la carte responsive
+      window.addEventListener('resize', () => chart.draw(data, options));
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Zones d’intervention</h1>
+    <p>Couverture Claryscope — Suisse romande & environs</p>
+    <a class="btn" href="index.html">← Retour à l’accueil</a>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <div id="map" aria-label="Carte de la Suisse avec secteurs Claryscope"></div>
+      <div class="legend">
+        <span class="key"><span class="sq" style="background:#FFD84D"></span> Suisse (zone couverte)</span>
+        <span class="key"><span class="sq" style="background:#17a34a"></span> Secteurs d’intervention (GE, VD, VS, FR, NE, BE)</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
