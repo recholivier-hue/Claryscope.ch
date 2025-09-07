@@ -1,96 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audits qualité – Claryscope</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
+    :root{
+      --brand:#0d2a4a;
+      --bg:#f4f7fb;
+      --card:#fff;
+      --text:#12243a;
+      --muted:#516b84;
+      --shadow:0 10px 30px rgba(2,18,42,.08);
+      --radius:14px;
     }
-    header {
-      background: #0d2a4a;
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
     }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
+
+    /* Bandeau bleu */
+    header{
+      background:var(--brand);
+      color:#fff;
+      padding:48px 16px 60px; /* ↑ un peu plus grand pour respirer */
+      text-align:center;
     }
-    header p {
-      margin-top: 10px;
-      font-size: 18px;
-      opacity: .9;
+    header h1{
+      margin:0 0 10px;
+      font-size:44px;
+      letter-spacing:.2px;
     }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    header p{
+      margin:0;
+      opacity:.95;
+      font-size:18px;
+      max-width:900px;
+      margin-inline:auto;
+      line-height:1.55;
     }
-    h2 {
-      color: #0d2a4a;
-      margin-top: 0;
+
+    /* Carte centrale */
+    .wrap{
+      max-width:1050px;
+      margin:-36px auto 56px; /* chevauche légèrement le bandeau */
+      padding:0 16px;
     }
-    h3 {
-      margin-top: 30px;
-      color: #0d2a4a;
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px 26px 10px;
     }
-    ul {
-      margin: 10px 0 20px 20px;
+
+    .card h2{
+      margin:0 0 18px;
+      font-size:26px;
+      color:var(--brand);
+      letter-spacing:.2px;
     }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #0d2a4a;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
+    .card h3{
+      margin:26px 0 10px;
+      font-size:22px;
+      color:var(--brand);
+      letter-spacing:.2px;
     }
-    .btn:hover {
-      background: #14406e;
+    .card p{color:var(--muted)}
+    .card ul{
+      margin:10px 0 22px 1.2rem;
     }
+    .card li{
+      margin:6px 0;
+      line-height:1.55;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--brand);
+      color:#fff;
+      border:none;
+      text-decoration:none;
+      padding:12px 16px;
+      border-radius:10px;
+      margin:22px 0 26px;
+      box-shadow:0 6px 16px rgba(13,42,74,.18);
+      transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;
+    }
+    .back:hover{ transform:translateY(-1px); box-shadow:0 9px 22px rgba(13,42,74,.22); }
+    .back:active{ transform:translateY(0); opacity:.92; }
   </style>
 </head>
 <body>
+
+  <!-- Tout le texte d’intro est dans le header -->
   <header>
     <h1>Audits qualité</h1>
     <p>Nous vérifions la conformité, la propreté et les standards de service dans divers secteurs.</p>
   </header>
 
-  <section>
-    <h2>Ce que nous auditons</h2>
-    <ul>
-      <li>Respect des procédures internes et normes ISO</li>
-      <li>Propreté, hygiène et sécurité (HACCP, normes sanitaires)</li>
-      <li>Qualité de l’accueil et du service client</li>
-      <li>Mise en avant et respect des standards de merchandising</li>
-      <li>Application des règles de sécurité et conformité légale</li>
-    </ul>
+  <main class="wrap">
+    <article class="card">
+      <h2>Ce que nous auditons</h2>
+      <ul>
+        <li>Respect des procédures internes et normes ISO</li>
+        <li>Propreté, hygiène et sécurité (HACCP, normes sanitaires)</li>
+        <li>Qualité de l’accueil et du service client</li>
+        <li>Mise en avant et respect des standards de merchandising</li>
+        <li>Application des règles de sécurité et conformité légale</li>
+      </ul>
 
-    <h2>Secteurs audités</h2>
-    <ul>
-      <li>🏬 <strong>Commerces de détail</strong> (supermarchés, boutiques spécialisées)</li>
-      <li>🍽️ <strong>Restaurants & cafés</strong> (hygiène, rapidité du service, accueil)</li>
-      <li>🚗 <strong>Automobile</strong> (concessions, garages, ateliers)</li>
-      <li>🏨 <strong>Hôtellerie</strong> (chambres, espaces communs, restauration)</li>
-      <li>🏦 <strong>Banques & assurances</strong> (accueil client, confidentialité, efficacité)</li>
-      <li>📱 <strong>Télécoms & énergie</strong> (explications claires, rapidité, accompagnement)</li>
-    </ul>
+      <h3>Secteurs audités</h3>
+      <ul>
+        <li>🏬 <strong>Commerces de détail</strong> (supermarchés, boutiques spécialisées)</li>
+        <li>🍽️ <strong>Restaurants & cafés</strong> (hygiène, rapidité du service, accueil)</li>
+        <li>🚗 <strong>Automobile</strong> (concessions, garages, ateliers)</li>
+        <li>🏨 <strong>Hôtellerie</strong> (espaces communs, chambres, restauration)</li>
+        <li>🏦 <strong>Banques & assurances</strong> (accueil client, confidentialité, efficacité)</li>
+        <li>📶 <strong>Télécoms & énergie</strong> (explications claires, rapidité, accompagnement)</li>
+      </ul>
 
-    <h2>Livrables</h2>
-    <p>Rapport d’audit détaillé, tableau de conformité, recommandations pratiques et plan d’amélioration.</p>
+      <h3>Livrables</h3>
+      <p>Rapport d’audit détaillé, tableau de conformité, recommandations pratiques et plan d’amélioration.</p>
 
-    <a href="index.html" class="btn">← Retour à l'accueil</a>
-  </section>
+      <a class="back" href="index.html">← Retour à l’accueil</a>
+    </article>
+  </main>
+
 </body>
 </html>
