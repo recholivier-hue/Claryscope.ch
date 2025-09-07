@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="u40Ee29KZO2Ge2um3TxwbxAS3RJYB6a4fbHXzd-s85w" />
-  <title>Claryscope – Contrôle qualité &amp; Visites mystère</title>
+  <title>Claryscope – Contrôle qualité & Visites mystère</title>
 
   <!-- Favicon (optionnel : place un favicon.ico dans /images si tu veux) -->
   <link rel="icon" href="images/favicon.ico" />
@@ -17,6 +17,7 @@
       --card:#fff;
       --shadow:0 4px 10px rgba(0,0,0,.1);
     }
+
     /* Reset simple + a11y */
     *{box-sizing:border-box}
     html:focus-within{scroll-behavior:smooth}
@@ -120,14 +121,7 @@
       border-radius:8px;
       display:block;
     }
-<section aria-labelledby="tit-carte">
-  <h2 id="tit-carte">Zones d’intervention</h2>
-  <div style="text-align:center">
-    <img src="images/suisse-secteurs.png"
-         alt="Carte de la Suisse avec les cantons desservis en vert"
-         style="max-width:90%; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.15);" />
-  </div>
-</section>
+
     /* Footer */
     footer{
       background:var(--brand);
@@ -150,7 +144,7 @@
 <body>
   <header role="banner" aria-label="En-tête Claryscope">
     <h1>CLARYSCOPE</h1>
-    <p>Contrôle qualité &amp; Visites mystère – Suisse romande</p>
+    <p>Contrôle qualité & Visites mystère – Suisse romande</p>
   </header>
 
   <section class="services" aria-labelledby="tit-services">
@@ -170,7 +164,7 @@
 
     <a href="feedback-coaching.html" class="card">
       <img src="images/coaching.png" alt="Icône coaching" />
-      <h3>Feedback &amp; Coaching</h3>
+      <h3>Feedback & Coaching</h3>
       <p>Accompagnement des équipes avec des retours constructifs.</p>
     </a>
   </section>
@@ -181,6 +175,17 @@
       <img src="https://images.unsplash.com/photo-1580894908361-967195033f6a?auto=format&fit=crop&w=800&q=80" alt="Exemple d’audit en point de vente" />
       <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Équipe en collaboration" />
       <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" alt="Session de coaching" />
+    </div>
+  </section>
+
+  <!-- Carte des secteurs : elle est bien en-dehors du <style> -->
+  <section aria-labelledby="tit-carte">
+    <h2 id="tit-carte">Zones d’intervention</h2>
+    <div style="text-align:center">
+      <img
+        src="images/suisse-secteurs.png"
+        alt="Carte de la Suisse avec les cantons desservis en vert"
+        style="max-width:90%; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.15);" />
     </div>
   </section>
 
