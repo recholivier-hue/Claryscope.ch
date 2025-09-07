@@ -1,125 +1,186 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="u40Ee29KZO2Ge2um3TxwbxAS3RJYB6a4fbHXzd-s85w" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claryscope – Contrôle qualité & Visites mystère</title>
+  <title>Claryscope – Contrôle qualité &amp; Visites mystère</title>
+
+  <!-- Favicon (optionnel : place un favicon.ico dans /images si tu veux) -->
+  <link rel="icon" href="images/favicon.ico" />
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      color: #333;
+    :root{
+      --brand:#0d2a4a;
+      --bg:#f8f9fa;
+      --text:#333;
+      --card:#fff;
+      --shadow:0 4px 10px rgba(0,0,0,.1);
     }
-    header {
-      background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    /* Reset simple + a11y */
+    *{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
     }
-    header h1 {
-      font-size: 48px;
-      margin: 0;
+
+    /* Hero */
+    header{
+      background:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height:60vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      text-align:center;
+      text-shadow:0 2px 6px rgba(0,0,0,.7);
+      padding:0 16px;
     }
-    header p {
-      font-size: 20px;
-      margin-top: 10px;
+    header h1{
+      font-size:48px;
+      margin:0;
+      letter-spacing:.5px;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
+    header p{
+      font-size:20px;
+      margin-top:10px;
+      max-width:850px;
     }
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #0d2a4a;
+
+    /* Sections */
+    section{
+      padding:60px 20px;
+      max-width:1100px;
+      margin:auto;
     }
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+    h2{
+      text-align:center;
+      margin:0 0 40px;
+      color:var(--brand);
+      font-size:28px;
+      letter-spacing:.2px;
     }
-    .card {
-      background: #fff;
-      padding: 20px;
-      flex: 1 1 300px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
+
+    /* Services */
+    .services{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:center;
     }
-    .card img {
-      width: 60px;
-      margin-bottom: 15px;
+    .card{
+      background:var(--card);
+      padding:20px;
+      flex:1 1 300px;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      text-decoration:none; /* pour les <a> */
+      color:inherit;
+      transition:transform .12s ease, box-shadow .12s ease;
     }
-    .card h3 {
-      margin: 10px 0;
+    .card:hover,
+    .card:focus-visible{
+      transform:translateY(-2px);
+      box-shadow:0 8px 18px rgba(0,0,0,.12);
+      outline:none;
     }
-    .about {
-      text-align: center;
-      line-height: 1.6;
+    .card img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+      margin-bottom:15px;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+    .card h3{
+      margin:10px 0 8px;
+      font-size:20px;
+      color:var(--brand);
     }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
+    .card p{
+      margin:0;
+      font-size:15px;
+      opacity:.9;
     }
-    footer {
-      background: #0d2a4a;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
+
+    /* Galerie */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:15px;
+    }
+    .gallery img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:8px;
+      display:block;
+    }
+
+    /* Footer */
+    footer{
+      background:var(--brand);
+      color:#fff;
+      text-align:center;
+      padding:24px 16px;
+      font-size:15px;
+    }
+    footer p{
+      margin:6px 0;
+    }
+
+    /* Responsive petit écran */
+    @media (max-width:480px){
+      header h1{font-size:36px}
+      header p{font-size:18px}
     }
   </style>
 </head>
 <body>
-  <header>
+  <header role="banner" aria-label="En-tête Claryscope">
     <h1>CLARYSCOPE</h1>
-    <p>Contrôle qualité & Visites mystère – Suisse romande</p>
+    <p>Contrôle qualité &amp; Visites mystère – Suisse romande</p>
   </header>
 
-  <section class="services">
-  <a href="visites-mystere.html" class="card">
-    <img src="images/visite.png" alt="Visites mystère">
-    <h3>Visites mystère</h3>
-    <p>Retail, automobile, restauration – évaluez vos points de vente comme un vrai client.</p>
-  </a>
+  <section class="services" aria-labelledby="tit-services">
+    <h2 id="tit-services">Nos services</h2>
 
-  <a href="audits-qualite.html" class="card">
-    <img src="images/audit.png" alt="Audits qualité">
-    <h3>Audits qualité</h3>
-    <p>Conformité, propreté, standards de service – suivi clair et précis.</p>
-  </a>
+    <a href="visites-mystere.html" class="card">
+      <img src="images/visite.png" alt="Icône visite mystère" />
+      <h3>Visites mystère</h3>
+      <p>Retail, automobile, restauration – évaluez vos points de vente comme un vrai client.</p>
+    </a>
 
-  <a href="feedback-coaching.html" class="card">
-    <img src="images/coaching.png" alt="Feedback & Coaching">
-    <h3>Feedback & Coaching</h3>
-    <p>Accompagnement des équipes avec des retours constructifs.</p>
-  </a>
-</section>
+    <a href="audits-qualite.html" class="card">
+      <img src="images/audit.png" alt="Icône audit qualité" />
+      <h3>Audits qualité</h3>
+      <p>Conformité, propreté, standards de service – suivi clair et précis.</p>
+    </a>
 
-  <section>
-    <h2>Galerie</h2>
+    <a href="feedback-coaching.html" class="card">
+      <img src="images/coaching.png" alt="Icône coaching" />
+      <h3>Feedback &amp; Coaching</h3>
+      <p>Accompagnement des équipes avec des retours constructifs.</p>
+    </a>
+  </section>
+
+  <section aria-labelledby="tit-galerie">
+    <h2 id="tit-galerie">Galerie</h2>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1580894908361-967195033f6a?auto=format&fit=crop&w=800&q=80" alt="Audit">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Team">
-      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" alt="Coaching">
+      <img src="https://images.unsplash.com/photo-1580894908361-967195033f6a?auto=format&fit=crop&w=800&q=80" alt="Exemple d’audit en point de vente" />
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Équipe en collaboration" />
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" alt="Session de coaching" />
     </div>
   </section>
 
-  <footer>
+  <footer role="contentinfo" aria-label="Pied de page Claryscope">
     <p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
-    <p>📧 contact@claryscope.ch | 📞 076 270 31 24</p>
+    <p>📧 <a href="mailto:contact@claryscope.ch" style="color:#fff;text-decoration:underline">contact@claryscope.ch</a> |
+       📞 <a href="tel:+41762703124" style="color:#fff;text-decoration:underline">076 270 31 24</a></p>
     <p>© 2025 Claryscope — Tous droits réservés</p>
   </footer>
 </body>
