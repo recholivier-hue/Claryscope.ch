@@ -8,150 +8,78 @@
   <link rel="icon" href="images/favicon.ico" />
 
   <style>
-    .charte {
-      background: #2ecc71;
-      color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 40%;
-      float: left;
-      margin: 30px 20px 30px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .charte h2 {
-      margin-top: 0;
-      font-size: 22px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="bloc-services-charte" style="overflow:auto;">
-    <section class="services"> ... </section>
-
-    <section class="charte">
-      <h2>Charte de comportement</h2>
-      <p>
-        Le comportement du personnel est au cœur de l’expérience client. 
-        Une charte de courtoisie impose des gestes simples mais essentiels : 
-        un sourire, un bonjour chaleureux et un au revoir professionnel. 
-      </p>
-      <p>
-        La visite mystère permet de vérifier concrètement que ces règles sont appliquées, 
-        et d’identifier les manquements afin de garantir une expérience client irréprochable.
-      </p>
-    </section>
-  </div>
-
-  <section class="gallery"> ... </section>
-</body>
     :root{
       --brand:#0d2a4a;
-      --bg:#f8f9fa;
-      --text:#333;
-      --card:#ffffff;
-      --shadow:0 4px 10px rgba(0,0,0,.10);
-      --shadow-strong:0 8px 18px rgba(0,0,0,.12);
-      --radius:10px;
+      --bg:#f6f7f9;
+      --text:#222;
+      --card:#fff;
+      --radius:12px;
+      --shadow:0 6px 18px rgba(0,0,0,.08);
+      --shadow-strong:0 10px 26px rgba(0,0,0,.12);
       --maxw:1100px;
     }
-
-    /* Reset / base */
     *{box-sizing:border-box}
     html:focus-within{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
     img{max-width:100%;height:auto;display:block}
 
-    /* Hero */
+    /* HERO */
     header{
+      min-height:56vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.6);
       background:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      min-height:60vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:#fff;
-      text-shadow:0 2px 6px rgba(0,0,0,.7);
       padding:0 16px;
     }
-    header h1{ margin:0 0 10px; font-size:48px; letter-spacing:.3px; }
-    header p{  margin:0; font-size:20px; max-width:860px; }
+    header h1{margin:0 0 10px;font-size:44px;letter-spacing:.3px}
+    header p{margin:0;font-size:19px;max-width:860px}
 
-    /* Sections communes */
-    section{ padding:60px 20px; max-width:var(--maxw); margin:auto; }
-    h2{ margin:0 0 36px; text-align:center; color:var(--brand); font-size:28px; }
+    /* SECTIONS/TITRES */
+    section{padding:56px 20px;max-width:var(--maxw);margin:auto}
+    h2{margin:0 0 32px;text-align:center;color:var(--brand);font-size:26px}
 
-    /* Services : 3 cartes uniformes */
-    .services{ display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    /* SERVICES (4 cartes) */
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .services > h2{grid-column:1/-1}
     .card{
-      background:var(--card);
-      color:inherit;
-      text-decoration:none;
-      width:100%; max-width:340px; min-height:260px;
-      display:flex; flex-direction:column; align-items:center; gap:10px;
-      padding:22px 20px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+      padding:22px 18px;text-align:center;color:inherit;text-decoration:none;
+      display:flex;flex-direction:column;align-items:center;gap:10px;min-height:240px;
       transition:transform .12s ease, box-shadow .12s ease;
     }
-    .card:hover, .card:focus-visible{ transform:translateY(-2px); box-shadow:var(--shadow-strong); outline:none; }
-    .card img{ width:52px; height:52px; object-fit:contain; margin-bottom:6px; }
-    .card h3{ margin:0; font-size:18px; color:var(--brand); }
-    .card p{ margin:0; font-size:14px; text-align:center; opacity:.95; }
+    .card:hover,.card:focus-visible{transform:translateY(-2px);box-shadow:var(--shadow-strong);outline:none}
+    .card img{width:56px;height:56px;object-fit:contain}
+    .card h3{margin:6px 0 4px;font-size:18px;color:var(--brand)}
+    .card p{margin:0;font-size:14px;opacity:.95}
 
-    /* Carte des secteurs */
-    .map-wrap{ display:flex; justify-content:center; }
-    .map{ width:100%; max-width:680px; border-radius:var(--radius); box-shadow:0 4px 12px rgba(0,0,0,.15); }
-<section class="charte">
-  <h2>Charte de comportement</h2>
-  <p>
-    Le comportement du personnel est au cœur de l’expérience client. Une charte de courtoisie impose des gestes simples mais essentiels : 
-    un sourire, un bonjour chaleureux et un au revoir professionnel. La plupart du temps, ces standards sont respectés. 
-    Mais lorsqu’ils ne le sont pas, l’impact peut être significatif : un client mécontent est souvent un client qui ne reviendra pas.
-  </p>
-  <p>
-    C’est là que la visite mystère prend toute son importance. Elle permet de détecter les manquements, parfois dus à des habitudes 
-    ou à des actions délibérées, que les formations seules ne suffisent pas toujours à corriger. 
-    Notre rôle est de vérifier, d’évaluer et de s’assurer que chaque employé applique concrètement les protocoles appris en formation, 
-    afin de garantir une expérience client irréprochable.
-  </p>
-</section>
-    /* Galerie */
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-      gap:16px;
+    /* CHARTE + CARTE (grille propre) */
+    .home-two-cols{
+      display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start;
+      max-width:var(--maxw);margin:20px auto 0;padding:0 20px;
     }
-    .gallery img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+    .charte{
+      background:#2ecc71;color:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+      padding:22px 20px;
     }
+    .charte h3{margin:0 0 10px;font-size:20px}
+    .charte p{margin:0 0 10px}
+    .map{width:100%;max-width:420px;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,.15)}
 
-    /* Footer */
-    footer{
-      background:var(--brand);
-      color:#fff;
-      text-align:center;
-      padding:18px 16px;   /* plus discret */
-      font-size:14px;
-    }
+    /* GALERIE */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .gallery img{height:220px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* FOOTER */
+    footer{background:var(--brand);color:#fff;text-align:center;padding:18px 16px;font-size:14px}
     footer p{margin:4px 0}
 
-    /* Responsive */
-    @media (max-width:480px){
-      header h1{font-size:36px}
-      header p{font-size:18px}
+    /* RESPONSIVE */
+    @media (max-width:1000px){.services{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){
+      header h1{font-size:34px}
+      header p{font-size:17px}
+      .services{grid-template-columns:1fr}
+      .home-two-cols{grid-template-columns:1fr;padding:0 16px}
+      .map{max-width:100%}
     }
   </style>
 </head>
@@ -163,44 +91,62 @@
     <p>Contrôle qualité &amp; Visites mystère – Suisse romande</p>
   </header>
 
-  <!-- SERVICES -->
+  <!-- SERVICES (4 cartes dont Charte) -->
   <section class="services" aria-labelledby="tit-services">
     <h2 id="tit-services">Nos services</h2>
 
     <a class="card" href="visites-mystere.html">
-      <img src="images/visite.png" alt="Icône visite mystère" />
+      <img src="images/visite.png" alt="Icône visite mystère">
       <h3>Visites mystère</h3>
       <p>Retail, automobile, restauration — évaluez vos points de vente comme un vrai client.</p>
     </a>
 
     <a class="card" href="audits-qualite.html">
-      <img src="images/audit.png" alt="Icône audit qualité" />
+      <img src="images/audit.png" alt="Icône audit qualité">
       <h3>Audits qualité</h3>
       <p>Conformité, propreté, standards de service — suivi clair et précis.</p>
     </a>
 
     <a class="card" href="feedback-coaching.html">
-      <img src="images/coaching.png" alt="Icône coaching" />
+      <img src="images/coaching.png" alt="Icône coaching">
       <h3>Feedback &amp; Coaching</h3>
       <p>Accompagnement des équipes avec des retours constructifs.</p>
     </a>
+
+    <a class="card" href="charte.html">
+      <img src="images/charte.png" alt="Icône charte de comportement">
+      <h3>Charte de comportement</h3>
+      <p>Courtoisie, professionnalisme et respect des protocoles au quotidien.</p>
+    </a>
   </section>
 
-  <!-- CARTE DES SECTEURS -->
-  <section aria-labelledby="tit-carte">
-    <h2 id="tit-carte">Zones d’intervention</h2>
-    <div class="map-wrap">
-      <img class="map" src="images/suisse-secteurs.png" alt="Carte de la Suisse avec les cantons desservis en vert" />
-    </div>
+  <!-- CHARTE (gauche) + CARTE SUISSE (droite) -->
+  <section class="home-two-cols" aria-labelledby="tit-charte-carte">
+    <h2 id="tit-charte-carte" style="grid-column:1/-1;text-align:center;color:var(--brand);margin:6px 0 8px">
+      Engagement &amp; Zones d’intervention
+    </h2>
+
+    <article class="charte" aria-labelledby="tit-charte">
+      <h3 id="tit-charte">Charte de comportement</h3>
+      <p>Le comportement du personnel est au cœur de l’expérience client. Une charte de courtoisie impose des gestes simples mais essentiels&nbsp;: un sourire, un bonjour chaleureux et un au revoir professionnel.</p>
+      <p>La visite mystère permet de vérifier concrètement que ces règles sont appliquées et d’identifier les manquements afin de garantir une expérience client irréprochable.</p>
+      <p style="margin:12px 0 0"><a href="charte.html" style="color:#fff;text-decoration:underline">Lire la charte complète →</a></p>
+    </article>
+
+    <aside aria-labelledby="tit-carte">
+      <h3 id="tit-carte" style="margin:0 0 10px;text-align:left;color:var(--brand)">Zones d’intervention</h3>
+      <img class="map" src="images/suisse-secteurs.png" alt="Carte de la Suisse – cantons desservis en vert">
+    </aside>
   </section>
 
   <!-- GALERIE -->
   <section aria-labelledby="tit-galerie">
     <h2 id="tit-galerie">Galerie</h2>
+    <!-- Remplace par tes propres fichiers si tu veux : images/gal1.jpg, gal2.jpg, gal3.jpg -->
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1580894908361-967195033f6a?auto=format&fit=crop&w=1200&q=80" alt="Exemple d’audit en point de vente" />
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Équipe en collaboration" />
-      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80" alt="Session de coaching" />
+      <img src="https://images.unsplash.com/photo-1580894908361-967195033f6a?auto=format&fit=crop&w=1200&q=80" alt="Exemple d’audit en point de vente">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Équipe en collaboration">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80" alt="Session de coaching">
     </div>
   </section>
 
