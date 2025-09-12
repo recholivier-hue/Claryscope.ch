@@ -67,7 +67,74 @@
     /* GALERIE */
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
     .gallery img{height:220px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+<!-- FORMULAIRE DE DEVIS -->
+<section id="devis" aria-labelledby="tit-devis">
+  <h2 id="tit-devis">Demande de devis</h2>
 
+  <form id="devis-form"
+        action="https://formspree.io/f/XXXXYYYY"  <!-- ↩️ remplace par ton endpoint Formspree -->
+        method="POST" class="form-card" novalidate>
+
+    <!-- Piège anti-spam (ne pas supprimer) -->
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div class="grid-2">
+      <label>Nom et prénom *
+        <input type="text" name="nom" required>
+      </label>
+
+      <label>Entreprise (optionnel)
+        <input type="text" name="entreprise">
+      </label>
+    </div>
+
+    <div class="grid-2">
+      <label>Email *
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Téléphone
+        <input type="tel" name="telephone" inputmode="tel" placeholder="+41 79 000 00 00">
+      </label>
+    </div>
+
+    <div class="grid-2">
+      <label>Type de mission *
+        <select name="type_mission" required>
+          <option value="">Sélectionner…</option>
+          <option>Visite mystère</option>
+          <option>Audit qualité</option>
+          <option>Feedback & Coaching</option>
+          <option>Mix de services</option>
+          <option>Autre</option>
+        </select>
+      </label>
+
+      <label>Localisation / Cantons concernés
+        <input type="text" name="zone" placeholder="GE, VD, FR, NE, VS…">
+      </label>
+    </div>
+
+    <label>Votre besoin (quelques lignes) *
+      <textarea name="message" rows="5" required
+                placeholder="Décrivez brièvement votre activité, le nombre de sites, vos objectifs…"></textarea>
+    </label>
+
+    <!-- Méta pour l'email reçu -->
+    <input type="hidden" name="_subject" value="Nouvelle demande de devis – claryscope.ch">
+    <input type="hidden" name="_replyto" value="">
+
+    <label class="check">
+      <input type="checkbox" required>
+      J’accepte que mes données soient utilisées pour me recontacter au sujet de ma demande.
+    </label>
+
+    <div class="actions">
+      <button type="submit">Envoyer la demande</button>
+      <p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</section>
     /* FOOTER */
     footer{background:var(--brand);color:#fff;text-align:center;padding:18px 16px;font-size:14px}
     footer p{margin:4px 0}
