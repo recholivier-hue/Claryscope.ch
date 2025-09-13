@@ -1,96 +1,530 @@
-<!doctype html>
-<!-- ✅ FERMETURE du formulaire juste après le bouton -->
-<p class="hint" style="margin-top:8px">En envoyant ce formulaire, vous acceptez notre politique de confidentialité.</p>
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="u40Ee29KZO2Ge2um3TxwbxAS3RJYB6a4fbHXzd-s85w" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Claryscope – Contrôle qualité & Visites mystère</title>
+  <link rel="icon" href="images/favicon.ico" />
 
+  <meta name="description" content="Claryscope – Visites mystère, audits qualité, feedback & coaching en Suisse romande.">
+  <link rel="icon" href="images/favicon.ico">
+  <style>
+    :root{
+      --brand:#0d2a4a;
+      --bg:#f6f7f9;
+      --text:#222;
+      --card:#fff;
+      --bg:#f8f9fa;
+      --text:#333;
+      --card:#ffffff;
+      --shadow:0 4px 10px rgba(0,0,0,.10);
+      --shadow-strong:0 8px 18px rgba(0,0,0,.12);
+      --radius:12px;
+      --shadow:0 6px 18px rgba(0,0,0,.08);
+      --shadow-strong:0 10px 26px rgba(0,0,0,.12);
+      --maxw:1100px;
+      --accent:#22cc71;
+    }
 
-<div class="grid grid-2" style="margin-top:16px;">
-<div class="card">
-<strong>Contacts</strong>
-<p class="muted" style="margin:8px 0 0">Route de Moudon 32, 1522 Lucens, Vaud</p>
-<p style="margin:4px 0 0"><a href="mailto:contact@claryscope.ch">contact@claryscope.ch</a> · <a href="tel:+41762703124">076 270 31 24</a></p>
-</div>
-<div class="card">
-<strong>Zones d’intervention</strong>
-<p class="muted" style="margin:8px 0 0">Suisse romande : Vaud, Genève, Valais, Fribourg, Neuchâtel.</p>
-</div>
-</div>
-</div>
+    /* Reset + base */
+    *{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit}
+    h1,h2,h3{line-height:1.2}
+
+    /* Container */
+    .wrap{max-width:var(--maxw);margin:auto;padding:60px 20px}
+
+    /* HERO */
+    header{
+      min-height:56vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.6);
+    header.hero{
+      background:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding:0 16px;
+      min-height:60vh;
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.7);
+      padding:40px 16px;
+    }
+    header.hero .inner{max-width:900px}
+    header.hero h1{margin:0 0 10px;font-size:48px;letter-spacing:.3px}
+    header.hero p{margin:0 auto;max-width:860px;font-size:20px}
+
+    /* Section titles */
+    section h2{
+      margin:0 0 36px;
+      text-align:center;
+      color:var(--brand);
+      font-size:28px;
+    }
+    header h1{margin:0 0 10px;font-size:44px;letter-spacing:.3px}
+    header p{margin:0;font-size:19px;max-width:860px}
+
+    /* SECTIONS/TITRES */
+    section{padding:56px 20px;max-width:var(--maxw);margin:auto}
+    h2{margin:0 0 32px;text-align:center;color:var(--brand);font-size:26px}
+
+    /* SERVICES (4 cartes) */
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .services > h2{grid-column:1/-1}
+    /* Services */
+    .services{
+      display:flex;flex-wrap:wrap;gap:20px;justify-content:center
+    }
+    .card{
+      background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+      padding:22px 18px;text-align:center;color:inherit;text-decoration:none;
+      display:flex;flex-direction:column;align-items:center;gap:10px;min-height:240px;
+      background:var(--card);
+      width:100%;max-width:340px;min-height:260px;
+      border-radius:var(--radius);box-shadow:var(--shadow);
+      padding:22px 20px;text-align:center;text-decoration:none;color:inherit;
+      display:flex;flex-direction:column;align-items:center;gap:10px;
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .card:hover,.card:focus-visible{transform:translateY(-2px);box-shadow:var(--shadow-strong);outline:none}
+    .card img{width:56px;height:56px;object-fit:contain}
+    .card h3{margin:6px 0 4px;font-size:18px;color:var(--brand)}
+    .card p{margin:0;font-size:14px;opacity:.95}
+
+    /* CHARTE + CARTE (grille propre) */
+    .home-two-cols{
+      display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start;
+      max-width:var(--maxw);margin:20px auto 0;padding:0 20px;
+    .card img{width:56px;height:56px;object-fit:contain;margin-bottom:6px}
+    .card h3{margin:0;color:var(--brand);font-size:18px}
+    .card p{margin:0;font-size:14px;opacity:.98}
+
+    /* Charte + Map en 2 colonnes */
+    .columns{
+      display:grid;grid-template-columns:420px 1fr;gap:22px;align-items:start;
+    }
+    @media (max-width:960px){ .columns{grid-template-columns: 1fr} }
+
+    .charte{
+      background:#2ecc71;color:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+      padding:22px 20px;
+      background:var(--accent);
+      color:#083a1f;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .charte h3{margin:0 0 10px;font-size:20px}
+    .charte h3{margin:0 0 10px;color:#083a1f}
+    .charte p{margin:0 0 10px}
+    .map{width:100%;max-width:420px;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+
+    /* GALERIE */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .gallery img{height:220px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+<!-- FORMULAIRE DE DEVIS -->
+<section id="devis" aria-labelledby="tit-devis">
+  <h2 id="tit-devis">Demande de devis</h2>
+
+  <form id="devis-form"
+        action="https://formspree.io/f/XXXXYYYY"  <!-- ↩️ remplace par ton endpoint Formspree -->
+        method="POST" class="form-card" novalidate>
+
+    <!-- Piège anti-spam (ne pas supprimer) -->
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div class="grid-2">
+      <label>Nom et prénom *
+        <input type="text" name="nom" required>
+      </label>
+
+      <label>Entreprise (optionnel)
+        <input type="text" name="entreprise">
+      </label>
+    </div>
+
+    <div class="grid-2">
+      <label>Email *
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Téléphone
+        <input type="tel" name="telephone" inputmode="tel" placeholder="+41 79 000 00 00">
+      </label>
+    </div>
+
+    <div class="grid-2">
+      <label>Type de mission *
+        <select name="type_mission" required>
+          <option value="">Sélectionner…</option>
+          <option>Visite mystère</option>
+          <option>Audit qualité</option>
+          <option>Feedback & Coaching</option>
+          <option>Mix de services</option>
+          <option>Autre</option>
+        </select>
+      </label>
+
+      <label>Localisation / Cantons concernés
+        <input type="text" name="zone" placeholder="GE, VD, FR, NE, VS…">
+      </label>
+    </div>
+    .charte ul{margin:10px 0 0 18px}
+
+    <label>Votre besoin (quelques lignes) *
+      <textarea name="message" rows="5" required
+                placeholder="Décrivez brièvement votre activité, le nombre de sites, vos objectifs…"></textarea>
+    </label>
+
+    <!-- Méta pour l'email reçu -->
+    <input type="hidden" name="_subject" value="Nouvelle demande de devis – claryscope.ch">
+    <input type="hidden" name="_replyto" value="">
+    .map{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+    .map img{border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+
+    <label class="check">
+      <input type="checkbox" required>
+      J’accepte que mes données soient utilisées pour me recontacter au sujet de ma demande.
+    </label>
+    /* Galerie */
+    .gallery{
+      display:grid;grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .gallery > div{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .gallery img{width:100%;height:220px;object-fit:cover}
+    @media (max-width:900px){ .gallery{grid-template-columns:1fr 1fr} }
+    @media (max-width:600px){ .gallery{grid-template-columns:1fr} }
+
+    /* Devis */
+    #devis .form-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      max-width:var(--maxw);margin:auto;
+    }
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media (max-width:700px){ .grid-2{grid-template-columns:1fr} }
+    label{display:block;font-weight:600;margin:10px 0 6px;color:var(--brand)}
+    input,select,textarea{
+      width:100%;padding:12px;border:1px solid #dfe3e8;border-radius:10px;background:#fff;font:inherit
+    }
+    input:focus,select:focus,textarea:focus{outline:2px solid rgba(13,42,74,.2);border-color:#b8c4d0}
+    .check{display:flex;align-items:center;gap:10px;font-weight:500;margin-top:8px}
+    .actions{display:flex;align-items:center;gap:16px;margin-top:14px}
+    button{
+      background:var(--brand);color:#fff;border:0;border-radius:10px;padding:11px 18px;cursor:pointer;
+      box-shadow:var(--shadow);font-weight:700
+    }
+    button:hover{filter:brightness(1.08)}
+    .form-msg{margin:0;font-weight:600}
+
+    <div class="actions">
+      <button type="submit">Envoyer la demande</button>
+      <p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
+    </div>
+  </form>
 </section>
-</main>
+    /* FOOTER */
+    footer{background:var(--brand);color:#fff;text-align:center;padding:18px 16px;font-size:14px}
+    /* Footer */
+    footer{
+      background:var(--brand);color:#fff;text-align:center;padding:18px 16px;font-size:14px
+    }
+    footer p{margin:4px 0}
 
+    /* RESPONSIVE */
+    @media (max-width:1000px){.services{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){
+      header h1{font-size:34px}
+      header p{font-size:17px}
+      .services{grid-template-columns:1fr}
+      .home-two-cols{grid-template-columns:1fr;padding:0 16px}
+      .map{max-width:100%}
+    }
+    /* Minor spacing tweaks around sections */
+    section{padding:60px 20px}
+  </style>
+</head>
 
-<!-- ===== FOOTER ===== -->
-<footer role="contentinfo" aria-label="Pied de page Claryscope">
-<div class="container">
-<div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start; justify-content:space-between;">
-<div>
-<div class="brand" style="margin-bottom:6px"><span class="logo" aria-hidden="true" style="background:#fff"></span><span>Claryscope</span></div>
-<p class="muted" style="margin:0">Contrôle qualité & visites terrain</p>
-</div>
-<div>
-<p style="margin:0">📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
-<p style="margin:6px 0 0">✉️ <a href="mailto:contact@claryscope.ch">contact@claryscope.ch</a> · 📞 <a href="tel:+41762703124">076 270 31 24</a></p>
-</div>
-</div>
-<hr style="border:none; border-top:1px solid #334155; margin:16px 0" />
-<div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
-<p style="margin:0">© 2025 Claryscope — Tous droits réservés</p>
-<p style="margin:0"><a href="#">Politique de confidentialité</a> · <a href="#">Mentions légales</a></p>
-</div>
-</div>
-</footer>
+<body>
 
+  <!-- HERO -->
+  <header role="banner" aria-label="En-tête Claryscope">
+    <h1>CLARYSCOPE</h1>
+    <p>Contrôle qualité &amp; Visites mystère – Suisse romande</p>
+  <header class="hero" role="banner" aria-label="En-tête Claryscope">
+    <div class="inner">
+      <h1>CLARYSCOPE</h1>
+      <p>Contrôle qualité & Visites mystère – Suisse romande</p>
+    </div>
+  </header>
 
-<!-- ===== JS minimal : feedback d’envoi & validation douce ===== -->
-<script>
-(function () {
-const form = document.getElementById('devis-form');
-const msg = document.getElementById('devis-msg');
-if (!form || !msg) return;
+  <!-- SERVICES (4 cartes dont Charte) -->
+  <section class="services" aria-labelledby="tit-services">
+  <!-- SERVICES -->
+  <section aria-labelledby="tit-services" class="wrap">
+    <h2 id="tit-services">Nos services</h2>
 
+    <a class="card" href="visites-mystere.html">
+      <img src="images/visite.png" alt="Icône visite mystère">
+      <h3>Visites mystère</h3>
+      <p>Retail, automobile, restauration — évaluez vos points de vente comme un vrai client.</p>
+    </a>
 
-function validate(form) {
-const req = form.querySelectorAll('[required]');
-for (const el of req) {
-if ((el.type === 'checkbox' && !el.checked) || !el.value.trim()) return false;
-}
-return true;
-}
+    <a class="card" href="audits-qualite.html">
+      <img src="images/audit.png" alt="Icône audit qualité">
+      <h3>Audits qualité</h3>
+      <p>Conformité, propreté, standards de service — suivi clair et précis.</p>
+    </a>
 
+    <a class="card" href="feedback-coaching.html">
+      <img src="images/coaching.png" alt="Icône coaching">
+      <h3>Feedback &amp; Coaching</h3>
+      <p>Accompagnement des équipes avec des retours constructifs.</p>
+    </a>
 
-form.addEventListener('submit', async (e) => {
-e.preventDefault();
-if (!validate(form)) {
-msg.textContent = 'Merci de compléter les champs requis.';
-msg.style.color = '#b91c1c';
-return;
-}
-msg.textContent = 'Envoi en cours…';
-msg.style.color = '';
+    <a class="card" href="charte.html">
+      <img src="images/charte.png" alt="Icône charte de comportement">
+      <h3>Charte de comportement</h3>
+      <p>Courtoisie, professionnalisme et respect des protocoles au quotidien.</p>
+    </a>
+    <div class="services">
+      <a href="visites-mystere.html" class="card">
+        <img src="images/visite.png" alt="Icône visite mystère">
+        <h3>Visites mystère</h3>
+        <p>Retail, automobile, restauration — évaluez vos points de vente comme un vrai client.</p>
+      </a>
 
+      <a href="audits-qualite.html" class="card">
+        <img src="images/audit.png" alt="Icône audits qualité">
+        <h3>Audits qualité</h3>
+        <p>Conformité, propreté, standards de service — suivi clair et précis.</p>
+      </a>
 
-try {
-const data = new FormData(form);
-// 👉 Intégration serveur : remplace `action="#"` par ton endpoint
-// const res = await fetch(form.action, { method: 'POST', body: data });
-// if (!res.ok) throw new Error('HTTP ' + res.status);
+      <a href="feedback-coaching.html" class="card">
+        <img src="images/coaching.png" alt="Icône coaching">
+        <h3>Feedback & Coaching</h3>
+        <p>Accompagnement des équipes avec des retours constructifs.</p>
+      </a>
+    </div>
+  </section>
 
+  <!-- CHARTE (gauche) + CARTE SUISSE (droite) -->
+  <section class="home-two-cols" aria-labelledby="tit-charte-carte">
+    <h2 id="tit-charte-carte" style="grid-column:1/-1;text-align:center;color:var(--brand);margin:6px 0 8px">
+      Engagement &amp; Zones d’intervention
+    </h2>
 
-// Démo locale (sans backend) :
-await new Promise(r => setTimeout(r, 700));
+    <article class="charte" aria-labelledby="tit-charte">
+      <h3 id="tit-charte">Charte de comportement</h3>
+      <p>Le comportement du personnel est au cœur de l’expérience client. Une charte de courtoisie impose des gestes simples mais essentiels&nbsp;: un sourire, un bonjour chaleureux et un au revoir professionnel.</p>
+      <p>La visite mystère permet de vérifier concrètement que ces règles sont appliquées et d’identifier les manquements afin de garantir une expérience client irréprochable.</p>
+      <p style="margin:12px 0 0"><a href="charte.html" style="color:#fff;text-decoration:underline">Lire la charte complète →</a></p>
+    </article>
 
+    <aside aria-labelledby="tit-carte">
+      <h3 id="tit-carte" style="margin:0 0 10px;text-align:left;color:var(--brand)">Zones d’intervention</h3>
+      <img class="map" src="images/suisse-secteurs.png" alt="Carte de la Suisse – cantons desservis en vert">
+    </aside>
+  <!-- CHARTE + CARTE -->
+  <section class="wrap" aria-label="Charte et zones d’intervention">
+    <div class="columns">
+      <!-- Charte (bloc vert à gauche) -->
+      <aside class="charte" aria-labelledby="t-charte">
+        <h3 id="t-charte">Charte de comportement</h3>
+        <p>
+          Le comportement du personnel est au cœur de l’expérience client. Notre charte de courtoisie
+          impose des gestes simples mais essentiels&nbsp;: sourire, accueil chaleureux, au revoir professionnel.
+        </p>
+        <p>
+          La visite mystère permet de vérifier concrètement l’application de ces règles, d’identifier les
+          manquements et d’assurer une expérience client irréprochable.
+        </p>
+        <ul>
+          <li>Respect des protocoles et standards internes</li>
+          <li>Posture professionnelle et qualité du conseil</li>
+          <li>Ponctualité, clarté et accompagnement</li>
+        </ul>
+      </aside>
 
-msg.textContent = 'Merci ! Votre demande a bien été envoyée.';
-msg.style.color = '#047857';
-form.reset();
-} catch (err) {
-console.error(err);
-msg.textContent = 'Une erreur est survenue. Merci de réessayer.';
-msg.style.color = '#b91c1c';
-}
-});
-})();
-</script>
+      <!-- Carte des secteurs -->
+      <div class="map">
+        <h2 style="margin:0 0 14px;text-align:left;color:var(--brand);font-size:22px">Zones d’intervention</h2>
+        <img src="images/suisse-secteurs.png" alt="Carte de la Suisse – cantons desservis en vert">
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+ <section aria-labelledby="tit-galerie">
+  <h2 id="tit-galerie">Galerie</h2>
+  <div class="gallery">
+    <img src="images/galerie-audit.jpg"
+         alt="Exemple d’audit en point de vente"
+         width="800" height="600" loading="lazy">
+
+    <img src="images/equipe.jpg"
+         alt="Mystery Shopping – travail d’équipe"
+         width="800" height="600" loading="lazy">
+
+    <img src="images/coaching.jpg"
+         alt="Session de coaching"
+         width="800" height="600" loading="lazy">
+  </div>
+</section>
+  <section class="wrap" aria-labelledby="tit-galerie">
+    <h2 id="tit-galerie">Galerie</h2>
+    <div class="gallery">
+      <div>
+        <img src="images/galerie-audit.jpg" alt="Exemple d’audit en point de vente" width="800" height="600" loading="lazy"
+             onerror="this.src='images/image.png'">
+      </div>
+      <div>
+        <img src="images/equipe.jpg" alt="Mystery Shopping – travail d’équipe" width="800" height="600" loading="lazy"
+             onerror="this.src='images/image.png'">
+      </div>
+      <div>
+        <img src="images/coaching.jpg" alt="Session de coaching" width="800" height="600" loading="lazy"
+             onerror="this.src='images/image.png'">
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVIS -->
+  <section id="devis" class="wrap" aria-labelledby="tit-devis">
+    <h2 id="tit-devis">Demande de devis</h2>
+
+    <form id="devis-form"
+          action="https://formspree.io/f/XXXXYYYY"  <!-- ⚠️ Remplace par ton endpoint Formspree -->
+          method="POST" class="form-card" novalidate>
+
+      <!-- Anti-spam -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="grid-2">
+        <label>Nom et prénom *
+          <input type="text" name="nom" required>
+        </label>
+
+        <label>Entreprise (optionnel)
+          <input type="text" name="entreprise">
+        </label>
+      </div>
+
+      <div class="grid-2">
+        <label>Email *
+          <input type="email" name="email" required>
+        </label>
+
+        <label>Téléphone
+          <input type="tel" name="telephone" inputmode="tel" placeholder="+41 76 270 31 24">
+        </label>
+      </div>
+
+      <div class="grid-2">
+        <label>Type de mission *
+          <select name="type_mission" required>
+            <option value="">Sélectionner…</option>
+            <option>Visite mystère</option>
+            <option>Audit qualité</option>
+            <option>Feedback & Coaching</option>
+            <option>Mix de services</option>
+            <option>Autre</option>
+          </select>
+        </label>
+
+        <label>Localisation / Cantons concernés
+          <input type="text" name="zone" placeholder="GE, VD, FR, NE, VS…">
+        </label>
+      </div>
+
+      <label>Votre besoin (quelques lignes) *
+        <textarea name="message" rows="5" required
+                  placeholder="Décrivez brièvement votre activité, le nombre de sites, vos objectifs…"></textarea>
+      </label>
+
+      <!-- Méta -->
+      <input type="hidden" name="_subject" value="Nouvelle demande de devis – claryscope.ch">
+
+      <label class="check">
+        <input type="checkbox" required>
+        J’accepte que mes données soient utilisées pour me recontacter au sujet de ma demande.
+      </label>
+
+      <div class="actions">
+        <button type="submit">Envoyer la demande</button>
+        <p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo" aria-label="Pied de page Claryscope">
+    <p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
+    <p>
+      📧 <a href="mailto:contact@claryscope.ch" style="color:#fff;text-decoration:underline">contact@claryscope.ch</a>
+      &nbsp;|&nbsp;
+      📞 <a href="tel:+41762703124" style="color:#fff;text-decoration:underline">076&nbsp;270&nbsp;31&nbsp;24</a>
+    </p>
+    <p>📧 <a href="mailto:contact@claryscope.ch" style="color:#fff;text-decoration:underline">contact@claryscope.ch</a> |
+       📞 <a href="tel:+41762703124" style="color:#fff;text-decoration:underline">076 270 31 24</a></p>
+    <p>© 2025 Claryscope — Tous droits réservés</p>
+  </footer>
+
+  <!-- JS mini : feedback d’envoi du formulaire -->
+  <script>
+    (function () {
+      const form = document.getElementById('devis-form');
+      if (!form) return;
+      const msg  = document.getElementById('devis-msg');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        msg.textContent = 'Envoi en cours…';
+        msg.style.color = '#0d2a4a';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            msg.textContent = 'Merci ! Votre demande a bien été envoyée. Nous revenons vers vous rapidement.';
+            msg.style.color = '#2c7a3f';
+            form.reset();
+          } else {
+            msg.textContent = 'Oups, un souci est survenu. Réessayez ou écrivez à contact@claryscope.ch';
+            msg.style.color = '#b00020';
+          }
+        } catch (err) {
+          msg.textContent = 'Connexion impossible. Vérifiez votre réseau ou écrivez à contact@claryscope.ch';
+          msg.style.color = '#b00020';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
