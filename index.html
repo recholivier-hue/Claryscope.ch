@@ -1,170 +1,96 @@
 <!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Claryscope — Demande de devis</title>
+<!-- ✅ FERMETURE du formulaire juste après le bouton -->
+<p class="hint" style="margin-top:8px">En envoyant ce formulaire, vous acceptez notre politique de confidentialité.</p>
+</div>
 
-  <!-- Remplace ce style interne par ton CSS si tu en as un -->
-  <style>
-    :root { --bg:#0f172a; --text:#111827; --muted:#6b7280; --card:#ffffff; --border:#e5e7eb; --accent:#111827; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text); background:#f8fafc; line-height:1.5; }
-    a { color:inherit; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
-    header { background:var(--bg); color:#fff; }
-    header .brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; }
-    nav { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
-    .hero { padding: 40px 0 10px; color:#fff; }
-    .hero h1 { margin:0; font-size: clamp(26px, 3vw, 36px); }
-    main { background:#fff; }
-    h2 { margin: 0 0 16px; font-size: 26px; }
-    /* Formulaire */
-    .form-wrap { background:var(--card); border:1px solid var(--border); border-radius:14px; padding: 20px; }
-    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .grid-1 { grid-template-columns:1fr; }
-    label { display:block; font-weight:600; margin-bottom:6px; }
-    input, select, textarea { width:100%; padding:10px; border:1px solid #d1d5db; border-radius:10px; font:inherit; background:#fff; }
-    textarea { min-height:140px; resize:vertical; }
-    .actions { margin-top: 16px; display:flex; align-items:center; gap:12px; }
-    button[type="submit"] { padding:10px 16px; border:0; border-radius:10px; background:var(--accent); color:#fff; cursor:pointer; }
-    .form-msg { font-size:.95rem; }
-    footer { margin-top:40px; background:var(--bg); color:#fff; }
-    footer p, footer a { color:#fff; margin:6px 0; }
-    .muted { color:var(--muted); }
-    /* Responsif */
-    @media (max-width: 800px) { .grid { grid-template-columns:1fr; } }
-  </style>
-</head>
-<body>
-  <!-- ====== EN-TÊTE ====== -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">Claryscope</div>
-        <div class="muted">Mystery Shopping & Audit qualité</div>
-      </nav>
-      <div class="hero">
-        <h1>Demande de devis</h1>
-        <p class="muted">Expliquez votre besoin — réponse rapide et personnalisée.</p>
-      </div>
-    </div>
-  </header>
 
-  <!-- ====== CONTENU PRINCIPAL ====== -->
-  <main>
-    <div class="container" style="padding-top:30px; padding-bottom:10px;">
-      <!-- Autres sections de ta page si besoin
-      <section aria-labelledby="services">
-        <h2 id="services">Nos services</h2>
-        <p class="muted">Audit qualité, visites mystère, formation & coaching…</p>
-      </section>
-      -->
+<div class="grid grid-2" style="margin-top:16px;">
+<div class="card">
+<strong>Contacts</strong>
+<p class="muted" style="margin:8px 0 0">Route de Moudon 32, 1522 Lucens, Vaud</p>
+<p style="margin:4px 0 0"><a href="mailto:contact@claryscope.ch">contact@claryscope.ch</a> · <a href="tel:+41762703124">076 270 31 24</a></p>
+</div>
+<div class="card">
+<strong>Zones d’intervention</strong>
+<p class="muted" style="margin:8px 0 0">Suisse romande : Vaud, Genève, Valais, Fribourg, Neuchâtel.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
 
-      <!-- ====== FORMULAIRE CORRIGÉ ====== -->
-      <section aria-labelledby="form-title" style="margin-top:10px;">
-        <div class="form-wrap">
-          <h2 id="form-title" style="margin-top:0;">Demande de devis</h2>
 
-          <!-- OUVERTURE <form> ICI -->
-          <form id="devis-form" method="POST" class="form-card" novalidate action="#">
-            <div class="grid">
-              <div>
-                <label for="name">Nom et prénom *</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-              </div>
-              <div>
-                <label for="email">Email *</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-              <div>
-                <label for="phone">Téléphone</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" />
-              </div>
-              <div>
-                <label for="service">Service souhaité</label>
-                <select id="service" name="service">
-                  <option value="">— Sélectionner —</option>
-                  <option>Audit qualité</option>
-                  <option>Visite mystère</option>
-                  <option>Formation / coaching</option>
-                  <option>Autre</option>
-                </select>
-              </div>
-            </div>
+<!-- ===== FOOTER ===== -->
+<footer role="contentinfo" aria-label="Pied de page Claryscope">
+<div class="container">
+<div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start; justify-content:space-between;">
+<div>
+<div class="brand" style="margin-bottom:6px"><span class="logo" aria-hidden="true" style="background:#fff"></span><span>Claryscope</span></div>
+<p class="muted" style="margin:0">Contrôle qualité & visites terrain</p>
+</div>
+<div>
+<p style="margin:0">📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
+<p style="margin:6px 0 0">✉️ <a href="mailto:contact@claryscope.ch">contact@claryscope.ch</a> · 📞 <a href="tel:+41762703124">076 270 31 24</a></p>
+</div>
+</div>
+<hr style="border:none; border-top:1px solid #334155; margin:16px 0" />
+<div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+<p style="margin:0">© 2025 Claryscope — Tous droits réservés</p>
+<p style="margin:0"><a href="#">Politique de confidentialité</a> · <a href="#">Mentions légales</a></p>
+</div>
+</div>
+</footer>
 
-            <div class="grid grid-1" style="margin-top:16px;">
-              <div>
-                <label for="message">Votre message *</label>
-                <textarea id="message" name="message" required placeholder="Décrivez votre besoin…"></textarea>
-              </div>
-              <div>
-                <label style="font-weight:400; display:flex; gap:10px; align-items:center;">
-                  <input type="checkbox" name="consent" required />
-                  J’accepte d’être contacté·e au sujet de ma demande.*
-                </label>
-              </div>
-            </div>
 
-            <div class="actions">
-              <button type="submit">Envoyer la demande</button>
-              <p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
-            </div>
-          </form>
-          <!-- FERMETURE </form> ICI -->
-        </div>
-      </section>
-    </div>
-  </main>
+<!-- ===== JS minimal : feedback d’envoi & validation douce ===== -->
+<script>
+(function () {
+const form = document.getElementById('devis-form');
+const msg = document.getElementById('devis-msg');
+if (!form || !msg) return;
 
-  <!-- ====== PIED DE PAGE ====== -->
-  <footer role="contentinfo" aria-label="Pied de page Claryscope">
-    <div class="container">
-      <p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
-      <p>✉️ <a href="mailto:contact@claryscope.ch" style="text-decoration:underline;">contact@claryscope.ch</a></p>
-      <p>📞 <a href="tel:+41762703124" style="text-decoration:underline;">076 270 31 24</a></p>
-      <p>© 2025 Claryscope — Tous droits réservés</p>
-    </div>
-  </footer>
 
-  <!-- ====== SCRIPT : feedback d’envoi ====== -->
-  <script>
-    (function () {
-      const form = document.getElementById('devis-form');
-      const msg = document.getElementById('devis-msg');
-      if (!form || !msg) return;
+function validate(form) {
+const req = form.querySelectorAll('[required]');
+for (const el of req) {
+if ((el.type === 'checkbox' && !el.checked) || !el.value.trim()) return false;
+}
+return true;
+}
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        msg.textContent = 'Envoi en cours…';
-        msg.style.color = '';
 
-        try {
-          const formData = new FormData(form);
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+if (!validate(form)) {
+msg.textContent = 'Merci de compléter les champs requis.';
+msg.style.color = '#b91c1c';
+return;
+}
+msg.textContent = 'Envoi en cours…';
+msg.style.color = '';
 
-          // 👉 Mets ici ton endpoint serveur (remplace action="#" dans <form>)
-          // const res = await fetch(form.action, { method: 'POST', body: formData });
-          // if (!res.ok) throw new Error('HTTP ' + res.status);
 
-          // Démo locale :
-          await new Promise(r => setTimeout(r, 600));
+try {
+const data = new FormData(form);
+// 👉 Intégration serveur : remplace `action="#"` par ton endpoint
+// const res = await fetch(form.action, { method: 'POST', body: data });
+// if (!res.ok) throw new Error('HTTP ' + res.status);
 
-          msg.textContent = 'Merci ! Votre demande a bien été envoyée.';
-          msg.style.color = '#047857';
-          form.reset();
-        } catch (err) {
-          console.error(err);
-          msg.textContent = 'Une erreur est survenue. Merci de réessayer.';
-          msg.style.color = '#b91c1c';
-        }
-      });
-    })();
-  </script>
-</body>
-</html>
-        }
-      });
-    })();
-  </script>
+
+// Démo locale (sans backend) :
+await new Promise(r => setTimeout(r, 700));
+
+
+msg.textContent = 'Merci ! Votre demande a bien été envoyée.';
+msg.style.color = '#047857';
+form.reset();
+} catch (err) {
+console.error(err);
+msg.textContent = 'Une erreur est survenue. Merci de réessayer.';
+msg.style.color = '#b91c1c';
+}
+});
+})();
+</script>
 </body>
 </html>
