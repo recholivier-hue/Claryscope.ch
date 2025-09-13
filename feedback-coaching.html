@@ -1,35 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feedback & Coaching – Claryscope</title>
-  <link rel="icon" href="images/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback & coaching – Claryscope</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Calibri,sans-serif;margin:0;color:#0f172a;background:#f7f8fb}
-    header{background:#0d2843;color:#fff;padding:32px 16px;text-align:center}
-    main{max-width:960px;margin:32px auto;padding:0 16px}
-    a.btn{display:inline-block;margin-top:16px;padding:10px 16px;background:#0d2843;color:#fff;text-decoration:none;border-radius:10px}
-    .hero{background:#fff;border-radius:16px;padding:24px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+    :root{ --brand:#0d2a4a; --bg:#f4f7fb; --card:#fff; --text:#12243a; --muted:#516b84; --shadow:0 10px 30px rgba(2,18,42,.08); --radius:14px; }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg);}
+    header{ background:var(--brand); color:#fff; padding:48px 16px 60px; text-align:center;}
+    header h1{ margin:0 0 10px; font-size:44px; letter-spacing:.2px;}
+    header p{ margin:0; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55;}
+    .wrap{ max-width:1050px; margin:-36px auto 56px; padding:0 16px;}
+    .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px 10px;}
+    .card h2{ margin:0 0 18px; font-size:26px; color:var(--brand); letter-spacing:.2px;}
+    .card h3{ margin:26px 0 10px; font-size:22px; color:var(--brand); letter-spacing:.2px;}
+    .card p{ color:var(--muted)}
+    .card ul{ margin:10px 0 22px 1.2rem;}
+    .card li{ margin:6px 0; line-height:1.55;}
+    .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; border:none; text-decoration:none; padding:12px 16px; border-radius:10px; margin:22px 0 26px; box-shadow:0 6px 16px rgba(13,42,74,.18); transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;}
+    .back:hover{ transform:translateY(-1px); box-shadow:0 9px 22px rgba(13,42,74,.22);}
+    .back:active{ transform:translateY(0); opacity:.92;}
   </style>
 </head>
 <body>
   <header>
-    <h1>Feedback & Coaching</h1>
-    <p>Renforcer les compétences des équipes par des retours constructifs.</p>
+    <h1>Feedback & coaching</h1>
+    <p>Transformer les constats en actions concrètes : restitution claire, entraînement ciblé, suivi court terme.</p>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Format</h2>
+  <main class="wrap">
+    <article class="card">
+      <h2>Approche</h2>
       <ul>
-        <li>Débrief factuel post-visite</li>
-        <li>Plan d’amélioration individuel</li>
-        <li>Suivi des KPI dans le temps</li>
+        <li>Débrief structuré avec faits, verbatim et priorités</li>
+        <li>Coaching opérationnel en situation (jeux de rôle, guides)</li>
+        <li>Plan d’actions 30/60/90 jours avec responsables et délais</li>
       </ul>
 
-      <a class="btn" href="index.html">← Retour à l’accueil</a>
-    </section>
+      <h3>Livrables</h3>
+      <ul>
+        <li>Fiches feedback individuelles</li>
+        <li>Checklists pratiques prêtes à l’emploi</li>
+        <li>Suivi à J+2 / J+14 selon besoin</li>
+      </ul>
+
+      <a class="back" href="index.html">← Retour à l’accueil</a>
+    </article>
   </main>
 </body>
 </html>
