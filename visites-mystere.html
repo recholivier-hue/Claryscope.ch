@@ -14,27 +14,10 @@
     header h1{ margin:0 0 10px; font-size:44px; letter-spacing:.2px;}
     header p{ margin:0 0 14px; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55;}
 
-    /* Menu de navigation */
-    .site-nav{
-      margin-top:18px;
-      display:flex;
-      gap:14px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .site-nav a{
-      color:#fff;
-      opacity:.9;
-      padding:6px 12px;
-      border-radius:8px;
-      text-decoration:none;
-      transition:background .2s;
-    }
-    .site-nav a:hover,
-    .site-nav a.active{
-      background:rgba(255,255,255,.14);
-      opacity:1;
-    }
+    /* Menu (1 seul bloc) */
+    .site-nav{ margin-top:18px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .site-nav a{ color:#fff; opacity:.9; padding:6px 12px; border-radius:8px; text-decoration:none; transition:background .2s; }
+    .site-nav a:hover, .site-nav a.active{ background:rgba(255,255,255,.14); opacity:1; }
 
     /* Carte centrale */
     .wrap{ max-width:1050px; margin:-36px auto 56px; padding:0 16px;}
@@ -56,6 +39,7 @@
     <h1>Visites mystère</h1>
     <p>Scénarios sur mesure, verbatim, preuves et recommandations pour mesurer l’expérience réelle vécue par vos clients.</p>
 
+    <!-- GARDE SEULEMENT CE MENU -->
     <nav class="site-nav">
       <a href="index.html">Accueil</a>
       <a href="visites-mystere.html" class="active">Visites</a>
@@ -91,4 +75,3 @@
 
 </body>
 </html>
-
