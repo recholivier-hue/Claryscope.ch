@@ -8,34 +8,26 @@
     :root{ --brand:#0d2a4a; --bg:#f4f7fb; --card:#fff; --text:#12243a; --muted:#516b84; --shadow:0 10px 30px rgba(2,18,42,.08); --radius:14px; }
     *{box-sizing:border-box}
     body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg);}
-
-    header{ background:var(--brand); color:#fff; padding:48px 16px 40px; text-align:center;}
+    header{ background:var(--brand); color:#fff; padding:48px 16px 60px; text-align:center;}
     header h1{ margin:0 0 10px; font-size:44px; letter-spacing:.2px;}
-    header p{ margin:0 0 14px; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55;}
-
+    header p{ margin:0; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55;}
     .site-nav{ margin-top:18px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
     .site-nav a{ color:#fff; opacity:.9; padding:6px 12px; border-radius:8px; text-decoration:none; transition:background .2s; }
     .site-nav a:hover, .site-nav a.active{ background:rgba(255,255,255,.14); opacity:1; }
-
     .wrap{ max-width:1050px; margin:-36px auto 56px; padding:0 16px;}
-    .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px 10px;}
+    .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px 32px;}
     .card h2{ margin:0 0 18px; font-size:26px; color:var(--brand); letter-spacing:.2px;}
-    .card h3{ margin:26px 0 10px; font-size:22px; color:var(--brand); letter-spacing:.2px;}
-    .card p{ color:var(--muted)}
+    .card p{ color:var(--text); margin-bottom:18px; line-height:1.6;}
     .card ul{ margin:10px 0 22px 1.2rem;}
     .card li{ margin:6px 0; line-height:1.55;}
-
-    .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; border:none; text-decoration:none; padding:12px 16px; border-radius:10px; margin:22px 0 26px; box-shadow:0 6px 16px rgba(13,42,74,.18); transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;}
+    .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; border:none; text-decoration:none; padding:12px 16px; border-radius:10px; margin-top:22px; box-shadow:0 6px 16px rgba(13,42,74,.18); transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;}
     .back:hover{ transform:translateY(-1px); box-shadow:0 9px 22px rgba(13,42,74,.22);}
-    .back:active{ transform:translateY(0); opacity:.92;}
   </style>
 </head>
 <body>
-
   <header>
     <h1>Charte de comportement</h1>
     <p>Garantir une expérience client irréprochable par des gestes simples et constants.</p>
-
     <nav class="site-nav">
       <a href="index.html">Accueil</a>
       <a href="visites-mystere.html">Visites</a>
@@ -48,20 +40,23 @@
 
   <main class="wrap">
     <article class="card">
-      <h2>Principes clés</h2>
+      <h2>Principes fondamentaux</h2>
+      <p>Chez Claryscope, nous nous engageons à garantir une expérience client irréprochable en toutes circonstances. Cette charte définit les principes de comportement attendus de chaque collaborateur, partenaire et intervenant mandaté, afin d’assurer un niveau d’excellence constant et mesurable.</p>
       <ul>
-        <li>Accueil chaleureux : sourire, bonjour, prise en charge rapide</li>
-        <li>Posture professionnelle : écoute active, langage clair, respect</li>
-        <li>Application des protocoles et sécurité</li>
-        <li>Clôture maîtrisée : reformulation, prochaine étape, remerciement</li>
+        <li><strong>Accueil et disponibilité :</strong> sourire, bonjour, prise en charge rapide et proactive.</li>
+        <li><strong>Communication claire et respectueuse :</strong> écoute active, langage précis et adapté, ton courtois et bienveillant.</li>
+        <li><strong>Posture professionnelle :</strong> attitude calme, présentation soignée, ponctualité et discrétion.</li>
+        <li><strong>Application rigoureuse des procédures :</strong> respect strict des protocoles internes, normes de sécurité et bonnes pratiques d’hygiène.</li>
+        <li><strong>Confidentialité :</strong> toutes les informations recueillies dans le cadre des missions sont protégées et partagées uniquement à des fins d’amélioration.</li>
+        <li><strong>Clôture maîtrisée :</strong> reformulation des points clés, prochaine étape clairement indiquée, remerciements sincères.</li>
       </ul>
 
-      <h3>Contrôle & suivi</h3>
-      <p class="muted">La visite mystère vérifie l’application réelle de la charte, identifie les écarts et accélère les corrections.</p>
+      <h2>Contrôle & suivi</h2>
+      <p>La visite mystère vérifie l’application réelle de la charte, identifie les écarts et accélère les corrections. Chaque rapport fournit des preuves objectives et mesurables, permettant d’ancrer ces principes dans les pratiques quotidiennes et de renforcer durablement la satisfaction client.</p>
 
       <a class="back" href="index.html">← Retour à l’accueil</a>
     </article>
   </main>
-
 </body>
 </html>
+
