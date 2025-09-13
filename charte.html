@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Charte de comportement – Claryscope</title>
-  <link rel="stylesheet" href="style.css"> <!-- si tu as un CSS global -->
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background:#f8f9fa; color:#333; }
-    header { background:#0d2a4a; color:#fff; text-align:center; padding:40px 20px; }
-    section { max-width:900px; margin:40px auto; padding:20px; background:#2ecc71; color:#fff; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
-    h1, h2 { margin-top:0; }
-    a { color:#fff; text-decoration:underline; }
+    :root{ --brand:#0d2a4a; --bg:#f4f7fb; --card:#fff; --text:#12243a; --muted:#516b84; --shadow:0 10px 30px rgba(2,18,42,.08); --radius:14px; }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg);}
+    header{ background:var(--brand); color:#fff; padding:48px 16px 60px; text-align:center;}
+    header h1{ margin:0 0 10px; font-size:44px; letter-spacing:.2px;}
+    header p{ margin:0; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55;}
+    .wrap{ max-width:1050px; margin:-36px auto 56px; padding:0 16px;}
+    .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px 10px;}
+    .card h2{ margin:0 0 18px; font-size:26px; color:var(--brand); letter-spacing:.2px;}
+    .card h3{ margin:26px 0 10px; font-size:22px; color:var(--brand); letter-spacing:.2px;}
+    .card p{ color:var(--muted)}
+    .card ul{ margin:10px 0 22px 1.2rem;}
+    .card li{ margin:6px 0; line-height:1.55;}
+    .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; border:none; text-decoration:none; padding:12px 16px; border-radius:10px; margin:22px 0 26px; box-shadow:0 6px 16px rgba(13,42,74,.18); transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;}
+    .back:hover{ transform:translateY(-1px); box-shadow:0 9px 22px rgba(13,42,74,.22);}
+    .back:active{ transform:translateY(0); opacity:.92;}
   </style>
 </head>
 <body>
   <header>
     <h1>Charte de comportement</h1>
-    <p>Garantir une expérience client irréprochable</p>
+    <p>Garantir une expérience client irréprochable par des gestes simples et constants.</p>
   </header>
 
-  <section>
-    <h2>Notre engagement</h2>
-    <p>
-      Le comportement du personnel est au cœur de l’expérience client.
-      Une charte de courtoisie impose des gestes simples mais essentiels :
-      un sourire, un bonjour chaleureux et un au revoir professionnel.
-    </p>
-    <p>
-      La visite mystère permet de vérifier concrètement que ces règles sont appliquées
-      et d’identifier les manquements afin de garantir une expérience client irréprochable.
-    </p>
-  </section>
+  <main class="wrap">
+    <article class="card">
+      <h2>Principes clés</h2>
+      <ul>
+        <li>Accueil chaleureux : sourire, bonjour, prise en charge rapide</li>
+        <li>Posture professionnelle : écoute active, langage clair, respect</li>
+        <li>Application des protocoles et sécurité</li>
+        <li>Clôture maîtrisée : reformulation, prochaine étape, remerciement</li>
+      </ul>
 
-  <footer style="background:#0d2a4a; color:#fff; text-align:center; padding:20px;">
-    <p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
-    <p>📧 contact@claryscope.ch | 📞 076 270 31 24</p>
-    <p><a href="index.html">← Retour à l'accueil</a></p>
-  </footer>
+      <h3>Contrôle & suivi</h3>
+      <p class="muted">La visite mystère vérifie l’application réelle de la charte, identifie les écarts et accélère les corrections.</p>
+
+      <a class="back" href="index.html">← Retour à l’accueil</a>
+    </article>
+  </main>
 </body>
 </html>
-👉 Résultat :
