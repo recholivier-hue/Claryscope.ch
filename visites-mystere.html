@@ -27,7 +27,12 @@
     .card p{ color:var(--muted)}
     .card ul{ margin:10px 0 22px 1.2rem;}
     .card li{ margin:6px 0; line-height:1.55;}
-    .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; border:none; text-decoration:none; padding:12px 16px; border-radius:10px; margin:22px 0 26px; box-shadow:0 6px 16px rgba(13,42,74,.18); transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;}
+
+    /* Galerie */
+    .gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+    .gallery img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; border:none; text-decoration:none; padding:12px 16px; border-radius:10px; margin:32px 0 26px; box-shadow:0 6px 16px rgba(13,42,74,.18); transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;}
     .back:hover{ transform:translateY(-1px); box-shadow:0 9px 22px rgba(13,42,74,.22);}
     .back:active{ transform:translateY(0); opacity:.92;}
   </style>
@@ -73,6 +78,14 @@
         <li>Restaurants, cafés, hôtellerie</li>
         <li>Télécoms, énergie, services publics et réseaux de santé</li>
       </ul>
+
+      <!-- Galerie d’exemples -->
+      <div class="gallery">
+        <div>
+          <img src="images/comportement-guichet.png" alt="Comportements distants ou inadaptés observés au guichet">
+          <p class="muted" style="padding:8px">Exemples de comportements distants ou inadaptés observés lors d’enquêtes mystère.</p>
+        </div>
+      </div>
 
       <a class="back" href="index.html">← Retour à l’accueil</a>
     </article>
