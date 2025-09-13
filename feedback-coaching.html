@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feedback & coaching – Claryscope</title>
+  <title>Audits qualité – Claryscope</title>
   <style>
     :root{ --brand:#0d2a4a; --bg:#f4f7fb; --card:#fff; --text:#12243a; --muted:#516b84; --shadow:0 10px 30px rgba(2,18,42,.08); --radius:14px; }
     *{box-sizing:border-box}
     body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg);}
-    header{ background:var(--brand); color:#fff; padding:48px 16px 60px; text-align:center;}
+
+    header{ background:var(--brand); color:#fff; padding:48px 16px 40px; text-align:center;}
     header h1{ margin:0 0 10px; font-size:44px; letter-spacing:.2px;}
-    header p{ margin:0; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55;}
+    header p{ margin:0 0 14px; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55;}
+
+    .site-nav{ margin-top:18px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .site-nav a{ color:#fff; opacity:.9; padding:6px 12px; border-radius:8px; text-decoration:none; transition:background .2s; }
+    .site-nav a:hover, .site-nav a.active{ background:rgba(255,255,255,.14); opacity:1; }
+
     .wrap{ max-width:1050px; margin:-36px auto 56px; padding:0 16px;}
     .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px 10px;}
     .card h2{ margin:0 0 18px; font-size:26px; color:var(--brand); letter-spacing:.2px;}
@@ -18,35 +24,55 @@
     .card p{ color:var(--muted)}
     .card ul{ margin:10px 0 22px 1.2rem;}
     .card li{ margin:6px 0; line-height:1.55;}
+
     .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; border:none; text-decoration:none; padding:12px 16px; border-radius:10px; margin:22px 0 26px; box-shadow:0 6px 16px rgba(13,42,74,.18); transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;}
     .back:hover{ transform:translateY(-1px); box-shadow:0 9px 22px rgba(13,42,74,.22);}
     .back:active{ transform:translateY(0); opacity:.92;}
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Feedback & coaching</h1>
-    <p>Transformer les constats en actions concrètes : restitution claire, entraînement ciblé, suivi court terme.</p>
+    <h1>Audits qualité</h1>
+    <p>Nous vérifions la conformité, la propreté et les standards de service dans divers secteurs.</p>
+
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="visites-mystere.html">Visites</a>
+      <a href="audits-qualite.html" class="active">Audits</a>
+      <a href="feedback-coaching.html">Coaching</a>
+      <a href="charte.html">Charte</a>
+      <a href="carte.html">Carte</a>
+    </nav>
   </header>
 
   <main class="wrap">
     <article class="card">
-      <h2>Approche</h2>
+      <h2>Ce que nous auditons</h2>
       <ul>
-        <li>Débrief structuré avec faits, verbatim et priorités</li>
-        <li>Coaching opérationnel en situation (jeux de rôle, guides)</li>
-        <li>Plan d’actions 30/60/90 jours avec responsables et délais</li>
+        <li>Respect des procédures internes et normes ISO</li>
+        <li>Propreté, hygiène et sécurité (HACCP, normes sanitaires)</li>
+        <li>Qualité de l’accueil et du service client</li>
+        <li>Mise en avant et respect des standards de merchandising</li>
+        <li>Application des règles de sécurité et conformité légale</li>
+      </ul>
+
+      <h3>Secteurs audités</h3>
+      <ul>
+        <li>🏬 Commerces de détail (supermarchés, boutiques spécialisées)</li>
+        <li>🍽️ Restaurants & cafés (hygiène, rapidité du service, accueil)</li>
+        <li>🚗 Automobile (concessions, garages, ateliers)</li>
+        <li>🏨 Hôtellerie (espaces communs, chambres, restauration)</li>
+        <li>🏦 Banques & assurances (accueil client, confidentialité, efficacité)</li>
+        <li>📶 Télécoms & énergie (explications claires, rapidité, accompagnement)</li>
       </ul>
 
       <h3>Livrables</h3>
-      <ul>
-        <li>Fiches feedback individuelles</li>
-        <li>Checklists pratiques prêtes à l’emploi</li>
-        <li>Suivi à J+2 / J+14 selon besoin</li>
-      </ul>
+      <p>Rapport d’audit détaillé, tableau de conformité, recommandations pratiques et plan d’amélioration.</p>
 
       <a class="back" href="index.html">← Retour à l’accueil</a>
     </article>
   </main>
+
 </body>
 </html>
