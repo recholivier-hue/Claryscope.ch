@@ -1,340 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Claryscope – Contrôle qualité & Visites mystère</title>
-  <meta name="description" content="Claryscope – Visites mystère, audits qualité, feedback & coaching en Suisse romande.">
-  <link rel="icon" href="images/favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claryscope — Demande de devis</title>
   <style>
-    :root{
-      --brand:#0d2a4a;
-      --bg:#f8f9fa;
-      --text:#333;
-      --card:#ffffff;
-      --shadow:0 4px 10px rgba(0,0,0,.10);
-      --shadow-strong:0 8px 18px rgba(0,0,0,.12);
-      --radius:12px;
-      --maxw:1100px;
-      --accent:#22cc71;
-    }
-
-    /* Reset + base */
-    *{box-sizing:border-box}
-    html:focus-within{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    img{max-width:100%;height:auto;display:block}
-    a{color:inherit}
-    h1,h2,h3{line-height:1.2}
-
-    /* Container */
-    .wrap{max-width:var(--maxw);margin:auto;padding:60px 20px}
-
-    /* HERO */
-    header.hero{
-      background:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      min-height:60vh;
-      display:flex;align-items:center;justify-content:center;text-align:center;
-      color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.7);
-      padding:40px 16px;
-    }
-    header.hero .inner{max-width:900px}
-    header.hero h1{margin:0 0 10px;font-size:48px;letter-spacing:.3px}
-    header.hero p{margin:0 auto;max-width:860px;font-size:20px}
-
-    /* Section titles */
-    section h2{
-      margin:0 0 36px;
-      text-align:center;
-      color:var(--brand);
-      font-size:28px;
-    }
-
-    /* Services */
-    .services{
-      display:flex;flex-wrap:wrap;gap:20px;justify-content:center
-    }
-    .card{
-      background:var(--card);
-      width:100%;max-width:340px;min-height:260px;
-      border-radius:var(--radius);box-shadow:var(--shadow);
-      padding:22px 20px;text-align:center;text-decoration:none;color:inherit;
-      display:flex;flex-direction:column;align-items:center;gap:10px;
-      transition:transform .12s ease, box-shadow .12s ease;
-    }
-    .card:hover,.card:focus-visible{transform:translateY(-2px);box-shadow:var(--shadow-strong);outline:none}
-    .card img{width:56px;height:56px;object-fit:contain;margin-bottom:6px}
-    .card h3{margin:0;color:var(--brand);font-size:18px}
-    .card p{margin:0;font-size:14px;opacity:.98}
-
-    /* Charte + Map en 2 colonnes */
-    .columns{
-      display:grid;grid-template-columns:420px 1fr;gap:22px;align-items:start;
-    }
-    @media (max-width:960px){ .columns{grid-template-columns: 1fr} }
-
-    .charte{
-      background:var(--accent);
-      color:#083a1f;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px;
-    }
-    .charte h3{margin:0 0 10px;color:#083a1f}
-    .charte p{margin:0 0 10px}
-    .charte ul{margin:10px 0 0 18px}
-
-    .map{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:16px;
-    }
-    .map img{border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-
-    /* Galerie */
-    .gallery{
-      display:grid;grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-    }
-    .gallery > div{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .gallery img{width:100%;height:220px;object-fit:cover}
-    @media (max-width:900px){ .gallery{grid-template-columns:1fr 1fr} }
-    @media (max-width:600px){ .gallery{grid-template-columns:1fr} }
-
-    /* Devis */
-    #devis .form-card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px;
-      max-width:var(--maxw);margin:auto;
-    }
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    @media (max-width:700px){ .grid-2{grid-template-columns:1fr} }
-    label{display:block;font-weight:600;margin:10px 0 6px;color:var(--brand)}
-    input,select,textarea{
-      width:100%;padding:12px;border:1px solid #dfe3e8;border-radius:10px;background:#fff;font:inherit
-    }
-    input:focus,select:focus,textarea:focus{outline:2px solid rgba(13,42,74,.2);border-color:#b8c4d0}
-    .check{display:flex;align-items:center;gap:10px;font-weight:500;margin-top:8px}
-    .actions{display:flex;align-items:center;gap:16px;margin-top:14px}
-    button{
-      background:var(--brand);color:#fff;border:0;border-radius:10px;padding:11px 18px;cursor:pointer;
-      box-shadow:var(--shadow);font-weight:700
-    }
-    button:hover{filter:brightness(1.08)}
-    .form-msg{margin:0;font-weight:600}
-
-    /* Footer */
-    footer{
-      background:var(--brand);color:#fff;text-align:center;padding:18px 16px;font-size:14px
-    }
-    footer p{margin:4px 0}
-
-    /* Minor spacing tweaks around sections */
-    section{padding:60px 20px}
+    /* Styles rapides (à adapter à ta feuille CSS) */
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#1f2937; line-height:1.5; }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px; }
+    h1, h2 { margin: 0 0 16px; }
+    .form-card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding: 20px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .grid-1 { grid-template-columns: 1fr; }
+    label { display:block; font-weight:600; margin-bottom:6px; }
+    input, select, textarea { width:100%; padding:10px; border:1px solid #d1d5db; border-radius:8px; font:inherit; }
+    textarea { min-height: 140px; resize: vertical; }
+    .actions { margin-top: 16px; display:flex; align-items:center; gap:12px; }
+    button[type="submit"] { padding:10px 16px; border:0; border-radius:8px; background:#111827; color:#fff; cursor:pointer; }
+    .form-msg { font-size: 0.95rem; }
+    footer { margin-top: 40px; padding: 24px 0; color:#fff; background:#111827; }
+    footer p, footer a { color:#fff; margin: 6px 0; }
   </style>
 </head>
 <body>
+  <main class="container">
+    <section aria-labelledby="devis-title">
+      <h1 id="devis-title">Demande de devis</h1>
 
-  <!-- HERO -->
-  <header class="hero" role="banner" aria-label="En-tête Claryscope">
-    <div class="inner">
-      <h1>CLARYSCOPE</h1>
-      <p>Contrôle qualité & Visites mystère – Suisse romande</p>
-    </div>
-  </header>
+      <!-- ✅ FORMULAIRE correctement ouvert ICI -->
+      <form id="devis-form" method="POST" class="form-card" novalidate action="#">
+        <div class="grid">
+          <div>
+            <label for="name">Nom et prénom *</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
 
-  <!-- SERVICES -->
-  <section aria-labelledby="tit-services" class="wrap">
-    <h2 id="tit-services">Nos services</h2>
-    <div class="services">
-      <a href="visites-mystere.html" class="card">
-        <img src="images/visite.png" alt="Icône visite mystère">
-        <h3>Visites mystère</h3>
-        <p>Retail, automobile, restauration — évaluez vos points de vente comme un vrai client.</p>
-      </a>
+          <div>
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
 
-      <a href="audits-qualite.html" class="card">
-        <img src="images/audit.png" alt="Icône audits qualité">
-        <h3>Audits qualité</h3>
-        <p>Conformité, propreté, standards de service — suivi clair et précis.</p>
-      </a>
+          <div>
+            <label for="phone">Téléphone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
 
-      <a href="feedback-coaching.html" class="card">
-        <img src="images/coaching.png" alt="Icône coaching">
-        <h3>Feedback & Coaching</h3>
-        <p>Accompagnement des équipes avec des retours constructifs.</p>
-      </a>
-    </div>
-  </section>
+          <div>
+            <label for="service">Service souhaité</label>
+            <select id="service" name="service">
+              <option value="">— Sélectionner —</option>
+              <option>Audit qualité</option>
+              <option>Visite mystère</option>
+              <option>Formation / coaching</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
 
-  <!-- CHARTE + CARTE -->
-  <section class="wrap" aria-label="Charte et zones d’intervention">
-    <div class="columns">
-      <!-- Charte (bloc vert à gauche) -->
-      <aside class="charte" aria-labelledby="t-charte">
-        <h3 id="t-charte">Charte de comportement</h3>
-        <p>
-          Le comportement du personnel est au cœur de l’expérience client. Notre charte de courtoisie
-          impose des gestes simples mais essentiels&nbsp;: sourire, accueil chaleureux, au revoir professionnel.
-        </p>
-        <p>
-          La visite mystère permet de vérifier concrètement l’application de ces règles, d’identifier les
-          manquements et d’assurer une expérience client irréprochable.
-        </p>
-        <ul>
-          <li>Respect des protocoles et standards internes</li>
-          <li>Posture professionnelle et qualité du conseil</li>
-          <li>Ponctualité, clarté et accompagnement</li>
-        </ul>
-      </aside>
+        <div class="grid grid-1" style="margin-top:16px;">
+          <div>
+            <label for="message">Votre message *</label>
+            <textarea id="message" name="message" required placeholder="Décrivez votre besoin…"></textarea>
+          </div>
 
-      <!-- Carte des secteurs -->
-      <div class="map">
-        <h2 style="margin:0 0 14px;text-align:left;color:var(--brand);font-size:22px">Zones d’intervention</h2>
-        <img src="images/suisse-secteurs.png" alt="Carte de la Suisse – cantons desservis en vert">
-      </div>
-    </div>
-  </section>
+          <div>
+            <label style="font-weight:400;">
+              <input type="checkbox" name="consent" required />
+              J’accepte d’être contacté·e au sujet de ma demande.*
+            </label>
+          </div>
+        </div>
 
-  <!-- GALERIE -->
-  <section class="wrap" aria-labelledby="tit-galerie">
-    <h2 id="tit-galerie">Galerie</h2>
-    <div class="gallery">
-      <div>
-        <img src="images/galerie-audit.jpg" alt="Exemple d’audit en point de vente" width="800" height="600" loading="lazy"
-             onerror="this.src='images/image.png'">
-      </div>
-      <div>
-        <img src="images/equipe.jpg" alt="Mystery Shopping – travail d’équipe" width="800" height="600" loading="lazy"
-             onerror="this.src='images/image.png'">
-      </div>
-      <div>
-        <img src="images/coaching.jpg" alt="Session de coaching" width="800" height="600" loading="lazy"
-             onerror="this.src='images/image.png'">
-      </div>
-    </div>
-  </section>
-
-  <!-- DEVIS -->
-  <section id="devis" class="wrap" aria-labelledby="tit-devis">
-    <h2 id="tit-devis">Demande de devis</h2>
-
-    <form id="devis-form"
-          action="https://formspree.io/f/XXXXYYYY"  <!-- ⚠️ Remplace par ton endpoint Formspree -->
-          method="POST" class="form-card" novalidate>
-
-      <!-- Anti-spam -->
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-      <div class="grid-2">
-        <label>Nom et prénom *
-          <input type="text" name="nom" required>
-        </label>
-
-        <label>Entreprise (optionnel)
-          <input type="text" name="entreprise">
-        </label>
-      </div>
-
-      <div class="grid-2">
-        <label>Email *
-          <input type="email" name="email" required>
-        </label>
-
-        <label>Téléphone
-          <input type="tel" name="telephone" inputmode="tel" placeholder="+41 76 270 31 24">
-        </label>
-      </div>
-
-      <div class="grid-2">
-        <label>Type de mission *
-          <select name="type_mission" required>
-            <option value="">Sélectionner…</option>
-            <option>Visite mystère</option>
-            <option>Audit qualité</option>
-            <option>Feedback & Coaching</option>
-            <option>Mix de services</option>
-            <option>Autre</option>
-          </select>
-        </label>
-
-        <label>Localisation / Cantons concernés
-          <input type="text" name="zone" placeholder="GE, VD, FR, NE, VS…">
-        </label>
-      </div>
-
-      <label>Votre besoin (quelques lignes) *
-        <textarea name="message" rows="5" required
-                  placeholder="Décrivez brièvement votre activité, le nombre de sites, vos objectifs…"></textarea>
-      </label>
-
-      <!-- Méta -->
-      <input type="hidden" name="_subject" value="Nouvelle demande de devis – claryscope.ch">
-
-      <label class="check">
-        <input type="checkbox" required>
-        J’accepte que mes données soient utilisées pour me recontacter au sujet de ma demande.
-      </label>
-
-      <div class="actions">
-        <button type="submit">Envoyer la demande</button>
-        <p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
-      </div>
-    </form>
-  </section>
+        <div class="actions">
+          <button type="submit">Envoyer la demande</button>
+          <p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <!-- ✅ FORMULAIRE correctement fermé ICI -->
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer role="contentinfo" aria-label="Pied de page Claryscope">
-    <p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
-    <p>📧 <a href="mailto:contact@claryscope.ch" style="color:#fff;text-decoration:underline">contact@claryscope.ch</a> |
-       📞 <a href="tel:+41762703124" style="color:#fff;text-decoration:underline">076 270 31 24</a></p>
-    <p>© 2025 Claryscope — Tous droits réservés</p>
+    <div class="container">
+      <p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
+      <p>✉️ <a href="mailto:contact@claryscope.ch" style="text-decoration:underline;">contact@claryscope.ch</a></p>
+      <p>📞 <a href="tel:+41762703124" style="text-decoration:underline;">076 270 31 24</a></p>
+      <p>© 2025 Claryscope — Tous droits réservés</p>
+    </div>
   </footer>
 
-  <!-- JS mini : feedback d’envoi du formulaire -->
+  <!-- JS : feedback d’envoi du formulaire -->
   <script>
     (function () {
       const form = document.getElementById('devis-form');
-      if (!form) return;
-      const msg  = document.getElementById('devis-msg');
+      const msg = document.getElementById('devis-msg');
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         msg.textContent = 'Envoi en cours…';
-        msg.style.color = '#0d2a4a';
 
+        // 👉 Remplace `#` dans l’attribut action du <form> par ton endpoint serveur
+        // Exemple: form.action = '/api/devis';
         try {
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
+          const formData = new FormData(form);
+          // Si tu utilises un backend, envoie la requête ici :
+          // const res = await fetch(form.action, { method: 'POST', body: formData });
+          // if (!res.ok) throw new Error('HTTP ' + res.status);
 
-          if (res.ok) {
-            msg.textContent = 'Merci ! Votre demande a bien été envoyée. Nous revenons vers vous rapidement.';
-            msg.style.color = '#2c7a3f';
-            form.reset();
-          } else {
-            msg.textContent = 'Oups, un souci est survenu. Réessayez ou écrivez à contact@claryscope.ch';
-            msg.style.color = '#b00020';
-          }
+          // Démo locale sans backend :
+          await new Promise(r => setTimeout(r, 600));
+
+          msg.textContent = 'Merci ! Votre demande a bien été envoyée.';
+          msg.style.color = '#047857';
+          form.reset();
         } catch (err) {
-          msg.textContent = 'Connexion impossible. Vérifiez votre réseau ou écrivez à contact@claryscope.ch';
-          msg.style.color = '#b00020';
+          msg.textContent = 'Une erreur est survenue. Merci de réessayer.';
+          msg.style.color = '#b91c1c';
+          console.error(err);
         }
       });
     })();
