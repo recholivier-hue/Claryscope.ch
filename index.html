@@ -1,95 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Claryscope — Contrôle qualité & Visites mystère</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f7f7; color:#222; }
+    header { background:#0d2a4a; color:#fff; padding:30px; text-align:center; }
+    header img { max-width:100px; display:block; margin:0 auto 10px; }
+    header h1 { margin:0; font-size:28px; letter-spacing:1px; }
+    header p { margin:5px 0 0; font-size:16px; }
+    section { padding:20px; max-width:900px; margin:auto; }
+    h2 { color:#0d2a4a; }
+    .card { background:#fff; padding:20px; margin:20px 0; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.1); }
+    footer { background:#eee; padding:15px; text-align:center; font-size:14px; }
+    a { color:#0d2a4a; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Logo Claryscope (SVG montagne simplifiée) -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="white" width="100" height="60">
+      <polygon points="10,50 40,20 55,35 70,10 90,50" fill="white"/>
+    </svg>
+    <h1>CLARYSCOPE</h1>
+    <p>Contrôle qualité & Visites mystère – Suisse romande</p>
+  </header>
 
+  <section>
+    <div class="card">
+      <h2>Nos services</h2>
+      <ul>
+        <li>Visites mystère (retail, automotive, restauration)</li>
+        <li>Audits qualité (procédures, propreté, conformité)</li>
+        <li>Feedback & coaching équipes</li>
+      </ul>
+    </div>
 
-<form id="devis-form" action="https://formspree.io/f/XXXXYYYY" method="POST" class="form-card" novalidate>
-<!-- Anti-spam -->
-<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Email : <a href="mailto:contact@claryscope.ch">contact@claryscope.ch</a></p>
+      <p>Téléphone : 076 270 31 24</p>
+      <p>Adresse : Route de Moudon 32, 1522 Lucens, Vaud</p>
+    </div>
+  </section>
 
-
-<div class="grid-2">
-<label>Nom et prénom *
-<input type="text" name="nom" required>
-</label>
-<label>Entreprise (optionnel)
-<input type="text" name="entreprise">
-</label>
-</div>
-
-
-<div class="grid-2">
-<label>Email *
-<input type="email" name="email" required>
-</label>
-<label>Téléphone
-<input type="tel" name="telephone" inputmode="tel" placeholder="+41 76 270 31 24">
-</label>
-</div>
-
-
-<div class="grid-2">
-<label>Type de mission *
-<select name="type_mission" required>
-<option value="">Sélectionner…</option>
-<option>Visite mystère</option>
-<option>Audit qualité</option>
-<option>Feedback &amp; Coaching</option>
-<option>Mix de services</option>
-<option>Autre</option>
-</select>
-</label>
-<label>Localisation / Cantons concernés
-<input type="text" name="zone" placeholder="GE, VD, FR, NE, VS…">
-</label>
-</div>
-
-
-<label>Votre besoin (quelques lignes) *
-<textarea name="message" rows="5" required placeholder="Décrivez brièvement votre activité, le nombre de sites, vos objectifs…"></textarea>
-</label>
-
-
-<input type="hidden" name="_subject" value="Nouvelle demande de devis – claryscope.ch">
-
-
-<label class="check">
-<input type="checkbox" required>
-J’accepte que mes données soient utilisées pour me recontacter au sujet de ma demande.
-</label>
-
-
-<div class="actions">
-<button type="submit">Envoyer la demande</button>
-<p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
-</div>
-</form>
-</section>
-
-
-<!-- FOOTER -->
-<footer role="contentinfo" aria-label="Pied de page Claryscope">
-<p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
-<p>📧 <a href="mailto:contact@claryscope.ch" style="color:#fff;text-decoration:underline">contact@claryscope.ch</a>
-&nbsp;|&nbsp; 📞 <a href="tel:+41762703124" style="color:#fff;text-decoration:underline">076 270 31 24</a></p>
-<p>© 2025 Claryscope — Tous droits réservés</p>
-</footer>
-
-
-<!-- JS : feedback d’envoi du formulaire -->
-<script>
-(function(){
-const form=document.getElementById('devis-form');
-const msg=document.getElementById('devis-msg');
-if(!form||!msg) return;
-form.addEventListener('submit', async (e)=>{
-e.preventDefault();
-msg.textContent='Envoi en cours…'; msg.style.color='#0d2a4a';
-try{
-const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-if(res.ok){ msg.textContent='Merci ! Votre demande a bien été envoyée.'; msg.style.color='#2c7a3f'; form.reset(); }
-else { msg.textContent='Oups, un souci est survenu. Réessayez ou écrivez à contact@claryscope.ch'; msg.style.color='#b00020'; }
-}catch(err){ msg.textContent='Connexion impossible. Vérifiez votre réseau ou écrivez à contact@claryscope.ch'; msg.style.color='#b00020'; }
-});
-})();
-</script>
+  <footer>
+    © 2025 Claryscope — Tous droits réservés
+  </footer>
 </body>
 </html>
