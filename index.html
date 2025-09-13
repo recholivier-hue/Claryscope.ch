@@ -4,83 +4,120 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Claryscope — Demande de devis</title>
+
+  <!-- Remplace ce style interne par ton CSS si tu en as un -->
   <style>
-    /* Styles rapides (à adapter à ta feuille CSS) */
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#1f2937; line-height:1.5; }
-    .container { max-width: 960px; margin: 0 auto; padding: 24px; }
-    h1, h2 { margin: 0 0 16px; }
-    .form-card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding: 20px; }
+    :root { --bg:#0f172a; --text:#111827; --muted:#6b7280; --card:#ffffff; --border:#e5e7eb; --accent:#111827; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text); background:#f8fafc; line-height:1.5; }
+    a { color:inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { background:var(--bg); color:#fff; }
+    header .brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+    .hero { padding: 40px 0 10px; color:#fff; }
+    .hero h1 { margin:0; font-size: clamp(26px, 3vw, 36px); }
+    main { background:#fff; }
+    h2 { margin: 0 0 16px; font-size: 26px; }
+    /* Formulaire */
+    .form-wrap { background:var(--card); border:1px solid var(--border); border-radius:14px; padding: 20px; }
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .grid-1 { grid-template-columns: 1fr; }
+    .grid-1 { grid-template-columns:1fr; }
     label { display:block; font-weight:600; margin-bottom:6px; }
-    input, select, textarea { width:100%; padding:10px; border:1px solid #d1d5db; border-radius:8px; font:inherit; }
-    textarea { min-height: 140px; resize: vertical; }
+    input, select, textarea { width:100%; padding:10px; border:1px solid #d1d5db; border-radius:10px; font:inherit; background:#fff; }
+    textarea { min-height:140px; resize:vertical; }
     .actions { margin-top: 16px; display:flex; align-items:center; gap:12px; }
-    button[type="submit"] { padding:10px 16px; border:0; border-radius:8px; background:#111827; color:#fff; cursor:pointer; }
-    .form-msg { font-size: 0.95rem; }
-    footer { margin-top: 40px; padding: 24px 0; color:#fff; background:#111827; }
-    footer p, footer a { color:#fff; margin: 6px 0; }
+    button[type="submit"] { padding:10px 16px; border:0; border-radius:10px; background:var(--accent); color:#fff; cursor:pointer; }
+    .form-msg { font-size:.95rem; }
+    footer { margin-top:40px; background:var(--bg); color:#fff; }
+    footer p, footer a { color:#fff; margin:6px 0; }
+    .muted { color:var(--muted); }
+    /* Responsif */
+    @media (max-width: 800px) { .grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section aria-labelledby="devis-title">
-      <h1 id="devis-title">Demande de devis</h1>
+  <!-- ====== EN-TÊTE ====== -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Claryscope</div>
+        <div class="muted">Mystery Shopping & Audit qualité</div>
+      </nav>
+      <div class="hero">
+        <h1>Demande de devis</h1>
+        <p class="muted">Expliquez votre besoin — réponse rapide et personnalisée.</p>
+      </div>
+    </div>
+  </header>
 
-      <!-- ✅ FORMULAIRE correctement ouvert ICI -->
-      <form id="devis-form" method="POST" class="form-card" novalidate action="#">
-        <div class="grid">
-          <div>
-            <label for="name">Nom et prénom *</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-          </div>
+  <!-- ====== CONTENU PRINCIPAL ====== -->
+  <main>
+    <div class="container" style="padding-top:30px; padding-bottom:10px;">
+      <!-- Autres sections de ta page si besoin
+      <section aria-labelledby="services">
+        <h2 id="services">Nos services</h2>
+        <p class="muted">Audit qualité, visites mystère, formation & coaching…</p>
+      </section>
+      -->
 
-          <div>
-            <label for="email">Email *</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
+      <!-- ====== FORMULAIRE CORRIGÉ ====== -->
+      <section aria-labelledby="form-title" style="margin-top:10px;">
+        <div class="form-wrap">
+          <h2 id="form-title" style="margin-top:0;">Demande de devis</h2>
 
-          <div>
-            <label for="phone">Téléphone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" />
-          </div>
+          <!-- OUVERTURE <form> ICI -->
+          <form id="devis-form" method="POST" class="form-card" novalidate action="#">
+            <div class="grid">
+              <div>
+                <label for="name">Nom et prénom *</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="phone">Téléphone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+              <div>
+                <label for="service">Service souhaité</label>
+                <select id="service" name="service">
+                  <option value="">— Sélectionner —</option>
+                  <option>Audit qualité</option>
+                  <option>Visite mystère</option>
+                  <option>Formation / coaching</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+            </div>
 
-          <div>
-            <label for="service">Service souhaité</label>
-            <select id="service" name="service">
-              <option value="">— Sélectionner —</option>
-              <option>Audit qualité</option>
-              <option>Visite mystère</option>
-              <option>Formation / coaching</option>
-              <option>Autre</option>
-            </select>
-          </div>
+            <div class="grid grid-1" style="margin-top:16px;">
+              <div>
+                <label for="message">Votre message *</label>
+                <textarea id="message" name="message" required placeholder="Décrivez votre besoin…"></textarea>
+              </div>
+              <div>
+                <label style="font-weight:400; display:flex; gap:10px; align-items:center;">
+                  <input type="checkbox" name="consent" required />
+                  J’accepte d’être contacté·e au sujet de ma demande.*
+                </label>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button type="submit">Envoyer la demande</button>
+              <p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+          <!-- FERMETURE </form> ICI -->
         </div>
-
-        <div class="grid grid-1" style="margin-top:16px;">
-          <div>
-            <label for="message">Votre message *</label>
-            <textarea id="message" name="message" required placeholder="Décrivez votre besoin…"></textarea>
-          </div>
-
-          <div>
-            <label style="font-weight:400;">
-              <input type="checkbox" name="consent" required />
-              J’accepte d’être contacté·e au sujet de ma demande.*
-            </label>
-          </div>
-        </div>
-
-        <div class="actions">
-          <button type="submit">Envoyer la demande</button>
-          <p id="devis-msg" class="form-msg" role="status" aria-live="polite"></p>
-        </div>
-      </form>
-      <!-- ✅ FORMULAIRE correctement fermé ICI -->
-    </section>
+      </section>
+    </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- ====== PIED DE PAGE ====== -->
   <footer role="contentinfo" aria-label="Pied de page Claryscope">
     <div class="container">
       <p>📍 Route de Moudon 32, 1522 Lucens, Vaud</p>
@@ -90,34 +127,41 @@
     </div>
   </footer>
 
-  <!-- JS : feedback d’envoi du formulaire -->
+  <!-- ====== SCRIPT : feedback d’envoi ====== -->
   <script>
     (function () {
       const form = document.getElementById('devis-form');
       const msg = document.getElementById('devis-msg');
+      if (!form || !msg) return;
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         msg.textContent = 'Envoi en cours…';
+        msg.style.color = '';
 
-        // 👉 Remplace `#` dans l’attribut action du <form> par ton endpoint serveur
-        // Exemple: form.action = '/api/devis';
         try {
           const formData = new FormData(form);
-          // Si tu utilises un backend, envoie la requête ici :
+
+          // 👉 Mets ici ton endpoint serveur (remplace action="#" dans <form>)
           // const res = await fetch(form.action, { method: 'POST', body: formData });
           // if (!res.ok) throw new Error('HTTP ' + res.status);
 
-          // Démo locale sans backend :
+          // Démo locale :
           await new Promise(r => setTimeout(r, 600));
 
           msg.textContent = 'Merci ! Votre demande a bien été envoyée.';
           msg.style.color = '#047857';
           form.reset();
         } catch (err) {
+          console.error(err);
           msg.textContent = 'Une erreur est survenue. Merci de réessayer.';
           msg.style.color = '#b91c1c';
-          console.error(err);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
         }
       });
     })();
