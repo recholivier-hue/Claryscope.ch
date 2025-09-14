@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prestations – Claryscope</title>
+  <meta name="description" content="Visites mystère, contrôles qualité et audits accessibles à toutes les entreprises – grands comptes et PME." />
+  <link rel="icon" href="images/favicon.ico" />
+  <style>
+    :root{--brand:#0e2740;--ink:#0f172a;--muted:#667085;--bg:#f7f8fa;--card:#fff;--radius:14px;--shadow:0 6px 22px rgba(15,23,42,.08);--maxw:1160px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    header.top{background:var(--brand);color:#fff;position:sticky;top:0;z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand svg{height:52px;margin-right:8px}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{color:#e5e7eb;padding:6px 8px;border-radius:8px}
+    .menu a.active{background:#0a1d31}
+    .burger{display:none;background:transparent;border:0;color:#fff;font-size:26px}
+    @media (max-width:900px){ .menu{display:none} .burger{display:block} }
+    .mobile-menu{display:none;flex-direction:column;gap:14px;padding:12px 0}
+    .mobile-open .mobile-menu{display:flex}
+    .hero{background:var(--brand);color:#fff;padding:44px 0}
+    .hero h1{margin:0 0 8px;font-size:clamp(26px,4vw,38px)}
+    .muted{color:var(--muted)}
+    .wrap{max-width:980px;margin:32px auto;padding:0 16px}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+    h2{margin:0 0 10px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .badge{display:inline-block;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px}
+    .cta{display:inline-flex;gap:10px;align-items:center;background:#111827;color:#fff;border-radius:12px;padding:12px 16px;margin-top:14px}
+    ul.check{list-style:none;padding:0;margin:0}
+    ul.check li{padding-left:28px;position:relative;margin:8px 0}
+    ul.check li:before{content:"✔";position:absolute;left:0;top:0;color:#0ea5e9}
+    footer{background:var(--brand);color:#fff;margin-top:32px}
+    .footer-top{padding:20px 0}
+    .footer-bottom{border-top:1px solid #334155;padding:12px 0;color:#e5e7eb}
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 96 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 52 36 20 50 34 64 14 88 52" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M36 20 50 34 64 14 88 52H8Z" fill="#fff" opacity=".12"/>
+      </svg>
+      <span>Claryscope</span>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('mobile-open')">☰</button>
+    <nav class="menu">
+      <a class="active" href="prestations.html">Prestations</a>
+      <a href="charte.html">Charte</a>
+      <a href="galerie.html" onclick="return false" style="opacity:.6">Galerie</a>
+      <a href="index.html#devis" class="cta">Demander un devis</a>
+    </nav>
+  </div>
+  <div class="container mobile-menu">
+    <a class="active" href="prestations.html">Prestations</a>
+    <a href="charte.html">Charte</a>
+    <a href="#" onclick="return false">Galerie</a>
+    <a href="index.html#devis">Devis</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">Accessible à toutes les tailles</span>
+    <h1>Visites mystère, contrôles & audits — pas seulement pour les grandes marques</h1>
+    <p class="muted" style="max-width:70ch">
+      Les programmes de qualité ne sont pas réservés au luxe ou aux enseignes nationales. 
+      Nous avons conçu des formats **simples, efficaces et abordables** pour les **PME, indépendants, franchises locales** et réseaux régionaux.
+    </p>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="card" aria-labelledby="pourquoi">
+    <h2 id="pourquoi">Pourquoi c’est aussi (surtout) utile aux PME</h2>
+    <div class="grid">
+      <div>
+        <ul class="check">
+          <li>Repérer les irritants du quotidien (attente, accueil, propreté, clarté des prix).</li>
+          <li>Confirmer ce qui fonctionne déjà bien et le valoriser.</li>
+          <li>Aligner les équipes avec des critères **simples et mesurables**.</li>
+          <li>Décider vite : recommandations concrètes, priorisées, actionnables.</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="check">
+          <li>Formats légers (1 à 3 visites) pour démarrer sans risque.</li>
+          <li>Tarification claire et adaptée au volume (aucune surprise).</li>
+          <li>Rapport sous **12–24 h** dans la majorité des cas, jusqu’à **1 semaine** si consolidation multi-sites.</li>
+          <li>Suivi inclus : plan d’actions, points de contrôle, retours d’expérience.</li>
+        </ul>
+      </div>
+    </div>
+    <a class="cta" href="index.html#devis">Parler de votre besoin →</a>
+  </section>
+
+  <section class="card" style="margin-top:18px" aria-labelledby="offres">
+    <h2 id="offres">Offres types & budgets indicatifs</h2>
+    <div class="grid">
+      <div>
+        <h3 style="margin:0">Starter – 1 visite</h3>
+        <p class="muted">Point de vente unique • photographie instantanée de l’expérience client.</p>
+        <ul class="check">
+          <li>Scénario sur mesure</li>
+          <li>Verbatim, preuves & chronométrages</li>
+          <li>Rapport clair + 5 recommandations clés</li>
+        </ul>
+        <p><strong>Budget indicatif :</strong> **CHF 190 – 290**</p>
+      </div>
+      <div>
+        <h3 style="margin:0">Essentiel – 3 visites</h3>
+        <p class="muted">Idéal PME • vérifie la régularité sur plusieurs créneaux/jours.</p>
+        <ul class="check">
+          <li>3 scénarios ou 3 moments différents</li>
+          <li>Consolidation & axes d’amélioration prioritaires</li>
+          <li>Point d’échange 30 min</li>
+        </ul>
+        <p><strong>Budget indicatif :</strong> **CHF 540 – 790**</p>
+      </div>
+      <div>
+        <h3 style="margin:0">Multi-sites – pack réseau</h3>
+        <p class="muted">Pour 5 à 50 sites • reporting comparatif et plan d’actions réseau.</p>
+        <ul class="check">
+          <li>Tableau de bord et synthèse direction</li>
+          <li>Benchmarks et priorisation par site</li>
+          <li>Accompagnement de déploiement (option)</li>
+        </ul>
+        <p><strong>Tarif sur mesure</strong> (dégressif selon volume)</p>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:10px">Prix indicatifs HT, hors frais spécifiques éventuels. Un devis précis est fourni avant toute mission.</p>
+  </section>
+
+  <section class="card" style="margin-top:18px" aria-labelledby="prestations">
+    <h2 id="prestations">Ce que nous faisons concrètement</h2>
+    <div class="grid">
+      <div>
+        <h3 style="margin:0">Visites mystère</h3>
+        <p>Accueil, écoute, conseil, applicatifs, encaissement, conformité des affichages, upsell, gestion des situations difficiles.</p>
+      </div>
+      <div>
+        <h3 style="margin:0">Contrôles & audits qualité</h3>
+        <p>Hygiène, propreté, sécurité, merchandising, normes internes, délais, parcours client, conformité documentaire.</p>
+      </div>
+    </div>
+    <a class="cta" href="index.html#devis">Obtenir une proposition →</a>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-top">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+      <a class="brand" href="index.html" style="color:#fff">
+        <svg viewBox="0 0 96 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="height:52px">
+          <path d="M8 52 36 20 50 34 64 14 88 52" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M36 20 50 34 64 14 88 52H8Z" fill="#fff" opacity=".12"/>
+        </svg>
+        <span>Claryscope</span>
+      </a>
+      <p style="margin:0;color:#e5e7eb">© 2025 Claryscope — Suisse romande</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p style="margin:0;text-align:right"><a href="index.html#devis" style="color:#fff;text-decoration:underline">Demander un devis</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.burger').forEach(b=>b.addEventListener('click',()=>document.body.classList.toggle('mobile-open')));
+</script>
+
+</body>
+</html>
