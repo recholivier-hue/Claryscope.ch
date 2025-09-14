@@ -31,7 +31,7 @@
     header.top{background:var(--brand);color:#fff;position:sticky;top:0;z-index:20}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand svg{height:52px;margin-right:8px} /* logo 2× */
+    .brand svg{height:52px;margin-right:8px}
     .brand span{font-size:1.6rem}
     .menu{display:flex;gap:18px;align-items:center}
     .menu a{color:#e5e7eb;padding:6px 8px;border-radius:8px}
@@ -89,7 +89,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="top">
     <div class="container nav">
       <a class="brand" href="#">
@@ -115,7 +114,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <h1>Contrôle qualité & visites mystère</h1>
@@ -127,7 +125,6 @@
     </div>
   </section>
 
-  <!-- PRESTATIONS (4 cartes cliquables) -->
   <section id="services" class="wrap" aria-labelledby="tit-prestations">
     <h2 id="tit-prestations">Prestations</h2>
 
@@ -154,7 +151,6 @@
     </div>
   </section>
 
-  <!-- CHARTE + CARTE -->
   <section id="charte" class="wrap" aria-label="Charte et zones d’intervention">
     <h2>Engagement & zones d’intervention</h2>
     <div class="columns">
@@ -175,7 +171,6 @@
     </div>
   </section>
 
-  <!-- GALERIE -->
   <section id="galerie" class="container">
     <h2>Galerie</h2>
     <div class="gallery">
@@ -185,7 +180,6 @@
     </div>
   </section>
 
-  <!-- DEVIS -->
   <section id="devis" class="container">
     <h2>Demande de devis</h2>
     <form id="devis-form" class="form-card" method="POST" action="#" novalidate>
@@ -211,7 +205,6 @@
     </form>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container footer-top">
       <div class="grid grid-2">
@@ -234,7 +227,10 @@
     <div class="container footer-bottom">
       <div class="grid grid-2">
         <p>© 2025 Claryscope — Tous droits réservés</p>
-        <p style="text-align:right"><a href="#">Politique de confidentialité</a> · <a href="#">Mentions légales</a></p>
+        <p style="text-align:right">
+          <a href="politique.html">Politique de confidentialité</a> · 
+          <a href="#">Mentions légales</a>
+        </p>
       </div>
     </div>
   </footer>
