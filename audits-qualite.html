@@ -3,162 +3,225 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Audits qualité – Claryscope</title>
-<meta name="description" content="Audits qualité opérationnels : standards, dossier de preuve, scoring et plan d'actions priorisé. Illustrations SVG intégrées.">
+<title>Claryscope — Audits qualité (illustrations inline)</title>
 <style>
   :root{
-    --brand:#0e2740; --brand-2:#113a68; --ink:#0f172a; --muted:#5c6b7a;
-    --bg:#f5f7fb; --card:#ffffff; --accent:#22cc71; --r:16px; --shadow:0 10px 32px rgba(15,23,42,.08);
+    --brand:#0d2a4a; --ink:#0f172a; --muted:#64748b; --card:#ffffff; --bg:#f4f7fb;
+    --radius:16px; --shadow:0 8px 28px rgba(2,18,42,.10);
+    --green:#22c55e; --amber:#f59e0b; --red:#ef4444; --blue:#38bdf8;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-  header{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
-  .nav{max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;gap:20px;align-items:center;justify-content:space-between}
-  .brand{display:flex;gap:10px;align-items:center;font-weight:800}
-  .brand svg{width:28px;height:28px}
-  .menu a{color:#e7eef7;text-decoration:none;padding:8px 12px;border-radius:10px}
-  .menu a.active,.menu a:hover{background:rgba(255,255,255,.14);color:#fff}
-  .hero{max-width:1200px;margin:0 auto;padding:46px 20px 54px}
-  .hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px)}
-  .hero p{margin:0;max-width:75ch;color:#d9e4f0}
-
-  .wrap{max-width:1100px;margin:-30px auto 80px;padding:0 20px}
-  .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--r);box-shadow:var(--shadow);padding:26px}
-  h2{font-size:clamp(20px,2.3vw,28px);margin:0 0 14px;color:var(--brand)}
-  h3{font-size:clamp(18px,2vw,22px);margin:22px 0 10px;color:var(--brand)}
-  p.muted{color:var(--muted)}
-  .grid{display:grid;gap:18px}
-  .g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-  @media (max-width:900px){.g-2,.g-3{grid-template-columns:1fr}}
-
-  .scene{background:#fff;border:1px solid #e9eef5;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px}
-  .scene svg{width:100%;height:auto;border-radius:12px}
-  .scene figcaption{font-weight:600}
-  .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:13px}
-  .ok{background:#ecfdf5;color:#065f46}
-  .warn{background:#fff7ed;color:#92400e}
-  .bad{background:#fef2f2;color:#991b1b}
-
-  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;padding:12px 16px;border-radius:12px;font-weight:700}
-  .btn:hover{filter:brightness(1.06)}
-  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+  header{background:var(--brand);color:#fff;padding:48px 16px 56px;text-align:center}
+  header h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px);letter-spacing:.2px}
+  header p{margin:0;opacity:.95;max-width:900px;margin-inline:auto}
+  nav.top{margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  nav.top a{color:#eaf2ff;padding:6px 10px;border-radius:9px;text-decoration:none}
+  nav.top a:hover,nav.top a.active{background:rgba(255,255,255,.14)}
+  .container{max-width:1160px;margin:-36px auto 60px;padding:0 18px}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 22px;margin-bottom:18px}
+  .card h2{margin:0 0 10px;color:var(--brand)}
+  .pill{display:inline-block;background:#ecfeff;color:#055160;border:1px solid #bae6fd;padding:4px 10px;border-radius:999px;font-size:13px}
+  .muted{color:var(--muted)}
+  .grid{display:grid;gap:16px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none}
+  /* Galerie SVG */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px}
+  @media (max-width:900px){.gallery{grid-template-columns:1fr}}
+  .panel{background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:0;overflow:hidden;border:1px solid #e5e7eb}
+  .panel h3{margin:14px 14px 8px;font-size:16px;color:#0d2a4a}
+  .panel p{margin:0 14px 14px;color:#516b84}
+  .svg-wrap{aspect-ratio:16/10;display:block}
+  footer{margin:30px 0 50px;text-align:center;color:#6b7280}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <div class="brand">
-      <svg viewBox="0 0 96 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M8 52 36 20 50 34 64 14 88 52" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
-        <path d="M36 20 50 34 64 14 88 52H8Z" fill="#fff" opacity=".12"/>
-      </svg>
-      <span>Claryscope</span>
-    </div>
-    <nav class="menu">
-      <a href="index.html">Accueil</a>
-      <a href="visites-mystere.html">Visites</a>
-      <a href="audits-qualite.html" class="active">Audits</a>
-      <a href="charte.html">Charte</a>
-    </nav>
-  </div>
-  <div class="hero">
-    <h1>Audits qualité</h1>
-    <p>Des audits opérationnels et mesurables : standards d’accueil, propreté, conformité, merchandising, sécurité & process. Un dossier de preuves étayé et un plan d’actions priorisé, livrés rapidement.</p>
-  </div>
+  <h1>Audits qualité</h1>
+  <p>Contrôles terrain chiffrés, preuves visuelles et plan d’actions priorisé pour garantir des standards irréprochables, site par site.</p>
+  <nav class="top" aria-label="Navigation">
+    <a href="index.html">Accueil</a>
+    <a href="visites-mystere.html">Visites</a>
+    <a href="#" class="active">Audits</a>
+    <a href="charte.html">Charte</a>
+  </nav>
 </header>
 
-<main class="wrap">
+<main class="container">
 
+  <!-- portée -->
   <section class="card">
-    <div class="grid g-2">
-      <div>
-        <h2>🎯 Finalité</h2>
-        <ul>
-          <li>Évaluer objectivement la conformité aux standards internes et réglementaires.</li>
-          <li>Mesurer l’exécution opérationnelle (accueil, files, signalétique, tenue, hygiène, sécurité, étiquetage, prix, PLV).</li>
-          <li>Identifier les écarts critiques, quantifier l’impact et proposer des mesures correctives.</li>
-        </ul>
-        <p class="muted">Chaque point est sourcé (photo, mesure, référence de standard), tracé et pondéré.</p>
-      </div>
-      <div>
-        <h2>🧭 Méthodologie</h2>
-        <ul>
-          <li>Questionnaire sur-mesure (check-list) aligné à votre charte & à la réglementation.</li>
-          <li>Audit in situ (ou distant) : relevés, minutages, inspection visuelle & documentaire.</li>
-          <li>Scoring pondéré, heatmap par rayon/poste, hiérarchisation des actions (RICE/effort/impact).</li>
-          <li>Débrief structuré avec les responsables du site.</li>
-        </ul>
-      </div>
+    <span class="pill">Portée de l’audit</span>
+    <h2>Ce que nous vérifions</h2>
+    <div class="grid grid-3">
+      <ul>
+        <li>Propreté & hygiène : sols, sanitaires, zones sensibles, points de contact, odeurs.</li>
+        <li>Encaissement : files, priorisation, rapidité, visibilité des prix et moyens de paiement.</li>
+        <li>Parcours client : clarté de l’offre, signalétique, obstacles, accessibilité.</li>
+      </ul>
+      <ul>
+        <li>Merchandising : facing, ruptures, balisage prix, promos, planogrammes.</li>
+        <li>Conformité : procédures, sécurité (EPI, extincteurs, issues), HACCP/traçabilité.</li>
+        <li>Expérience : accueil, assistance proactive, conclusion & remerciement.</li>
+      </ul>
+      <ul>
+        <li>Preuves photos/vidéos, minutages, mesures avec seuils.</li>
+        <li>Tableau de conformité + plan d’actions (priorités, responsables, échéances).</li>
+        <li>Consolidation multisites & pilotage des progrès.</li>
+      </ul>
     </div>
-
-    <h3>📦 Livrables</h3>
-    <ul>
-      <li>Tableau de bord (score global, par chapitre, par site) + historique pour le suivi des progrès.</li>
-      <li>Dossier de preuves : photos annotées, verbatim, horodatage, références de standards.</li>
-      <li>Plan d’actions priorisé : qui fait quoi, d’ici quand, avec quick-wins et actions structurelles.</li>
-      <li>Recommandations de prévention (risques H&S / expérience client / réputation).</li>
-    </ul>
   </section>
 
+  <!-- galerie svg -->
   <section class="card">
-    <h2>🔍 Exemples d’audit (illustrations)</h2>
-    <div class="grid g-3">
-      <!-- Propreté & hygiène -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Propreté & hygiène">
-          <rect width="560" height="360" rx="16" fill="#eefcf7"/>
-          <rect x="70" y="220" width="420" height="80" rx="14" fill="#22cc71"/>
-          <circle cx="150" cy="160" r="30" fill="#ffd1c2"/>
-          <rect x="120" y="185" width="60" height="52" rx="10" fill="#0e2740"/>
-          <rect x="240" y="150" width="80" height="18" rx="6" fill="#fff"/>
-          <rect x="240" y="172" width="80" height="10" rx="5" fill="#d1fae5"/>
-          <rect x="330" y="150" width="120" height="18" rx="6" fill="#fff"/>
-        </svg>
-        <figcaption>Propreté & hygiène</figcaption>
-        <span class="tag ok">Sol, caisses, sanitaires, zones clients</span>
+    <span class="pill">Galerie BD — points d’audit</span>
+    <div class="gallery">
+
+      <!-- PANEL 1 — Propreté & hygiène -->
+      <figure class="panel">
+        <div class="svg-wrap">
+          <svg viewBox="0 0 960 600" role="img" aria-label="Propreté et hygiène" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bgClean" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#0ea5e9"/>
+                <stop offset="1" stop-color="#22d3ee"/>
+              </linearGradient>
+              <filter id="glow"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.2)"/></filter>
+            </defs>
+            <rect width="960" height="600" fill="url(#bgClean)"/>
+            <!-- seau + balai -->
+            <g filter="url(#glow)">
+              <rect x="140" y="360" width="170" height="120" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="6"/>
+              <rect x="170" y="380" width="110" height="80" rx="12" fill="#e2e8f0"/>
+              <rect x="250" y="260" width="18" height="190" rx="9" fill="#ef4444"/>
+              <path d="M260 450 q60 10 100 -10 l-8 -28 q-48 20 -92 6 z" fill="#f59e0b"/>
+              <!-- étoiles de brillance -->
+              <g fill="#ffffff" opacity=".9">
+                <polygon points="410,170 420,195 445,205 420,215 410,240 400,215 375,205 400,195"/>
+                <polygon points="540,110 548,128 566,135 548,142 540,160 532,142 514,135 532,128"/>
+                <polygon points="620,200 630,225 655,235 630,245 620,270 610,245 585,235 610,225"/>
+              </g>
+            </g>
+            <text x="520" y="140" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="34" fill="#ffffff" opacity=".95">Propreté & hygiène</text>
+            <text x="520" y="185" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="22" fill="#e6f9ff" opacity=".9">
+              Sols, sanitaires, points de contact — contrôle visible et mesuré.
+            </text>
+          </svg>
+        </div>
+        <h3>Propreté & hygiène</h3>
+        <p>Contrôle visuel + preuves : sols, surfaces, sanitaires, poignées, odeurs, déchets.</p>
       </figure>
 
-      <!-- Conformité prix/étiquettes -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Conformité prix & étiquetage">
-          <rect width="560" height="360" rx="16" fill="#f1f5ff"/>
-          <rect x="90" y="220" width="380" height="80" rx="14" fill="#113a68"/>
-          <rect x="120" y="140" width="90" height="56" rx="10" fill="#60a5fa"/>
-          <rect x="230" y="140" width="90" height="56" rx="10" fill="#93c5fd"/>
-          <rect x="340" y="140" width="90" height="56" rx="10" fill="#60a5fa"/>
-          <rect x="140" y="204" width="50" height="10" rx="5" fill="#fff"/>
-          <rect x="250" y="204" width="50" height="10" rx="5" fill="#fff"/>
-          <rect x="360" y="204" width="50" height="10" rx="5" fill="#fff"/>
-        </svg>
-        <figcaption>Conformité prix & étiquetage</figcaption>
-        <span class="tag warn">Écarts signalés & corrigés</span>
+      <!-- PANEL 2 — Merchandising & facing -->
+      <figure class="panel">
+        <div class="svg-wrap">
+          <svg viewBox="0 0 960 600" role="img" aria-label="Merchandising et facing" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bgMerch" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#111827"/>
+                <stop offset="1" stop-color="#334155"/>
+              </linearGradient>
+              <filter id="shadow"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.25)"/></filter>
+            </defs>
+            <rect width="960" height="600" fill="url(#bgMerch)"/>
+            <!-- étagères -->
+            <g filter="url(#shadow)" fill="#e2e8f0">
+              <rect x="120" y="140" width="360" height="40" rx="8"/>
+              <rect x="120" y="200" width="360" height="40" rx="8"/>
+              <rect x="120" y="260" width="360" height="40" rx="8"/>
+              <rect x="120" y="320" width="360" height="40" rx="8"/>
+              <rect x="120" y="380" width="360" height="40" rx="8"/>
+            </g>
+            <!-- produits (pastilles/facings) -->
+            <g transform="translate(140,150)">
+              <g fill="#22c55e">
+                <rect x="0" y="0" width="40" height="20" rx="4"/>
+                <rect x="50" y="0" width="40" height="20" rx="4"/>
+                <rect x="100" y="0" width="40" height="20" rx="4"/>
+              </g>
+              <g fill="#f59e0b">
+                <rect x="0" y="60" width="40" height="20" rx="4"/>
+                <rect x="50" y="60" width="40" height="20" rx="4"/>
+                <rect x="100" y="60" width="40" height="20" rx="4"/>
+                <rect x="150" y="60" width="40" height="20" rx="4"/>
+              </g>
+              <g fill="#38bdf8">
+                <rect x="0" y="120" width="40" height="20" rx="4"/>
+                <rect x="50" y="120" width="40" height="20" rx="4"/>
+                <rect x="100" y="120" width="40" height="20" rx="4"/>
+                <rect x="150" y="120" width="40" height="20" rx="4"/>
+                <rect x="200" y="120" width="40" height="20" rx="4"/>
+              </g>
+              <!-- une rupture volontaire -->
+              <g fill="#ef4444">
+                <rect x="250" y="180" width="40" height="20" rx="4"/>
+              </g>
+            </g>
+            <text x="520" y="140" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="34" fill="#e5e7eb">Merchandising & facing</text>
+            <text x="520" y="185" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="22" fill="#cbd5e1" opacity=".9">
+              Visibilité, balisage prix, ruptures, planogrammes, promotions.
+            </text>
+          </svg>
+        </div>
+        <h3>Merchandising & facing</h3>
+        <p>Linéraires lisibles, niveaux de stocks, ruptures, balisage prix & promos conformes.</p>
       </figure>
 
-      <!-- Sécurité & accessibilité -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sécurité & accessibilité">
-          <rect width="560" height="360" rx="16" fill="#fff7ed"/>
-          <rect x="70" y="230" width="420" height="70" rx="14" fill="#ffb020"/>
-          <circle cx="160" cy="160" r="28" fill="#ffe1a6"/>
-          <rect x="130" y="184" width="60" height="48" rx="10" fill="#ef4444"/>
-          <rect x="260" y="150" width="200" height="18" rx="6" fill="#fff"/>
-          <rect x="260" y="172" width="160" height="12" rx="6" fill="#fde68a"/>
-        </svg>
-        <figcaption>Sécurité & accessibilité</figcaption>
-        <span class="tag bad">Issues, signalétique, obstacles</span>
+      <!-- PANEL 3 — Sécurité & conformité -->
+      <figure class="panel">
+        <div class="svg-wrap">
+          <svg viewBox="0 0 960 600" role="img" aria-label="Sécurité et conformité" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bgSafe" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#0f172a"/>
+                <stop offset="1" stop-color="#0ea5e9"/>
+              </linearGradient>
+              <filter id="ds"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.25)"/></filter>
+            </defs>
+            <rect width="960" height="600" fill="url(#bgSafe)"/>
+            <!-- panneaux & extincteur -->
+            <g filter="url(#ds)">
+              <rect x="140" y="140" width="180" height="120" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="6"/>
+              <text x="160" y="200" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="36" fill="#ef4444">⚠</text>
+              <rect x="370" y="160" width="32" height="180" rx="8" fill="#ef4444"/>
+              <circle cx="386" cy="150" r="22" fill="#fde047" stroke="#111827" stroke-width="6"/>
+              <rect x="410" y="210" width="22" height="100" rx="6" fill="#ef4444"/>
+              <!-- issue de secours -->
+              <rect x="160" y="320" width="240" height="160" rx="14" fill="#10b981"/>
+              <rect x="180" y="340" width="200" height="120" rx="10" fill="#34d399"/>
+              <rect x="260" y="370" width="40" height="60" rx="6" fill="#064e3b"/>
+            </g>
+            <text x="520" y="140" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="34" fill="#eaf2ff">Sécurité & conformité</text>
+            <text x="520" y="185" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="22" fill="#eaf2ff" opacity=".9">
+              EPI, extincteurs, issues, HACCP/traçabilité, affichage légal, RGPD.
+            </text>
+          </svg>
+        </div>
+        <h3>Sécurité & conformité</h3>
+        <p>Vérification procédures, équipements, signalétique, registres, traçabilité & données.</p>
       </figure>
+
     </div>
+  </section>
 
-    <div class="actions">
-      <a class="btn" href="index.html#devis">Lancer un audit</a>
-      <a class="btn" href="charte.html" style="background:#0e2740">Voir la charte</a>
-    </div>
+  <!-- livrables -->
+  <section class="card">
+    <span class="pill">Livrables</span>
+    <h2>Ce que vous recevez</h2>
+    <ul>
+      <li>Un rapport clair et chiffré avec toutes les preuves, les non-conformités et les points forts.</li>
+      <li>Un plan d’actions priorisé (RAG) : responsables, échéances, impacts, suivi.</li>
+      <li>Un tableau de bord multi-sites pour piloter l’amélioration continue.</li>
+    </ul>
+    <a class="btn" href="index.html">← Retour à l’accueil</a>
   </section>
 
 </main>
 
-<footer style="text-align:center;color:#789;padding:18px 0">© 2025 Claryscope — Audits qualité & amélioration continue</footer>
+<footer>© 2025 Claryscope — Illustrations SVG intégrées (aucun fichier image requis)</footer>
+
 </body>
 </html>
