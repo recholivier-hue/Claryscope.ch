@@ -3,265 +3,255 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Visites mystère – Claryscope</title>
-<meta name="description" content="Visites mystère, preuves et recommandations. Page avec illustrations dessinées en couleur, responsive et rapide.">
+<title>Claryscope — Visites mystère (illustrations inline)</title>
 <style>
   :root{
-    --brand:#0e2740; --brand-2:#113a68; --ink:#0f172a; --muted:#5c6b7a;
-    --bg:#f5f7fb; --card:#ffffff; --accent:#22cc71; --warn:#ffb020; --bad:#ef4444;
-    --r:16px; --shadow:0 10px 32px rgba(15,23,42,.08);
+    --brand:#0d2a4a; --ink:#0f172a; --muted:#64748b; --card:#ffffff; --bg:#f4f7fb;
+    --radius:16px; --shadow:0 8px 28px rgba(2,18,42,.10);
+    --accent:#22cc71; --rose:#ff6b6b; --amber:#f59e0b; --sky:#38bdf8;
   }
   *{box-sizing:border-box}
-  html:focus-within{scroll-behavior:smooth}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-
-  /* Header */
-  header{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
-  .nav{max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;gap:20px;align-items:center;justify-content:space-between}
-  .brand{display:flex;gap:10px;align-items:center;font-weight:800}
-  .brand svg{width:28px;height:28px}
-  .menu a{color:#e7eef7;text-decoration:none;padding:8px 12px;border-radius:10px}
-  .menu a.active,.menu a:hover{background:rgba(255,255,255,.14);color:#fff}
-  .hero{max-width:1200px;margin:0 auto;padding:46px 20px 54px}
-  .hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px)}
-  .hero p{margin:0;max-width:70ch;color:#d9e4f0}
-
-  /* Wrapping cards */
-  .wrap{max-width:1100px;margin:-30px auto 80px;padding:0 20px}
-  .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--r);box-shadow:var(--shadow);padding:26px}
-
-  h2{font-size:clamp(20px,2.3vw,28px);margin:0 0 14px;color:var(--brand)}
-  h3{font-size:clamp(18px,2vw,22px);margin:22px 0 10px;color:var(--brand)}
-  p.muted{color:var(--muted)}
-
-  /* Grid sections */
-  .grid{display:grid;gap:18px}
-  .g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-  @media (max-width:900px){.g-2,.g-3{grid-template-columns:1fr}}
-
-  /* Gallery of SVG scenes */
-  .scene{background:#fff;border:1px solid #e9eef5;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px}
-  .scene svg{width:100%;height:auto;border-radius:12px}
-  .scene figcaption{font-weight:600}
-  .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:13px}
-  .good{background:#ecfdf5;color:#065f46}
-  .warn{background:#fff7ed;color:#92400e}
-  .bad{background:#fef2f2;color:#991b1b}
-
-  /* CTA */
-  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;padding:12px 16px;border-radius:12px;font-weight:700}
-  .btn:hover{filter:brightness(1.06)}
-  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-
-  /* Footer */
-  footer{margin-top:40px;padding:18px 0;color:#789; text-align:center}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+  header{background:var(--brand);color:#fff;padding:48px 16px 56px;text-align:center}
+  header h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px);letter-spacing:.2px}
+  header p{margin:0;opacity:.95;max-width:900px;margin-inline:auto}
+  nav.top{margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  nav.top a{color:#eaf2ff;padding:6px 10px;border-radius:9px;text-decoration:none}
+  nav.top a:hover,nav.top a.active{background:rgba(255,255,255,.14)}
+  .container{max-width:1160px;margin:-36px auto 60px;padding:0 18px}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 22px;margin-bottom:18px}
+  .card h2{margin:0 0 10px;color:var(--brand)}
+  .grid{display:grid;gap:16px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+  .pill{display:inline-block;background:#ecfeff;color:#055160;border:1px solid #bae6fd;padding:4px 10px;border-radius:999px;font-size:13px}
+  .muted{color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none}
+  /* Galerie SVG */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px}
+  @media (max-width:900px){.gallery{grid-template-columns:1fr}}
+  .panel{background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:0;overflow:hidden;border:1px solid #e5e7eb}
+  .panel h3{margin:14px 14px 8px;font-size:16px;color:#0d2a4a}
+  .panel p{margin:0 14px 14px;color:#516b84}
+  .svg-wrap{aspect-ratio:16/10;display:block}
+  footer{margin:30px 0 50px;text-align:center;color:#6b7280}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <div class="brand">
-      <!-- Petit logo -->
-      <svg viewBox="0 0 96 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M8 52 36 20 50 34 64 14 88 52" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
-        <path d="M36 20 50 34 64 14 88 52H8Z" fill="#fff" opacity=".12"/>
-      </svg>
-      <span>Claryscope</span>
-    </div>
-    <nav class="menu">
-      <a href="index.html">Accueil</a>
-      <a href="visites-mystere.html" class="active">Visites</a>
-      <a href="audits-qualite.html">Audits</a>
-      <a href="charte.html">Charte</a>
-    </nav>
-  </div>
-  <div class="hero">
-    <h1>Visites mystère</h1>
-    <p>Observation anonyme, verbatim précis et recommandations concrètes pour faire progresser l’expérience client – retail, garage, restauration, hôtellerie, services.</p>
-    <div class="actions">
-      <a class="btn" href="#galerie">Voir des exemples</a>
-      <a class="btn" href="index.html#devis" style="background:#22cc71">Demander un devis</a>
-    </div>
-  </div>
+  <h1>Contrôle qualité & visites mystère</h1>
+  <p>Illustrations en SVG intégrées directement dans la page — aucun fichier image externe. Scénarios sur mesure, preuves et recommandations pour élever l’expérience client.</p>
+  <nav class="top" aria-label="Navigation">
+    <a href="index.html">Accueil</a>
+    <a href="#" class="active">Visites</a>
+    <a href="#audits">Audits</a>
+    <a href="#charte">Charte</a>
+  </nav>
 </header>
 
-<main class="wrap">
-
-  <!-- Objectifs & Déroulement -->
+<main class="container">
+  <!-- Bloc objectifs + déroulement -->
   <section class="card">
-    <div class="grid g-2">
-      <div>
-        <h2>🥇 Objectifs</h2>
-        <ul>
-          <li>Mesurer l’accueil, l’écoute et la qualité du conseil.</li>
-          <li>Vérifier l’application des protocoles & scripts de vente.</li>
-          <li>Identifier les points forts et les priorités d’amélioration.</li>
-        </ul>
-        <p class="muted">Nos comptes rendus sont factuels, illustrés par des preuves et livrés sous 48 h.</p>
-      </div>
-      <div>
-        <h2>📝 Déroulement</h2>
-        <ul>
-          <li>Brief & co-construction du scénario (profil client, contexte, attentes).</li>
-          <li>Visite terrain 100 % anonyme comme un client ordinaire.</li>
-          <li>Collecte de preuves (verbatim exacts, documents, minutage, photos).</li>
-          <li>Rapport clair, chiffré & plan d’actions priorisé.</li>
-        </ul>
-      </div>
-    </div>
-    <h3>🌍 Secteurs couverts</h3>
-    <p class="muted">Suisse romande · Retail · Automobile · Restauration · Hôtellerie · Télécoms · Énergie · Services publics.</p>
+    <span class="pill">Visites mystère</span>
+    <h2>Objectifs</h2>
+    <ul>
+      <li>Mesurer l’accueil, l’écoute et la qualité du conseil, sans jugement personnel.</li>
+      <li>Vérifier l’application des protocoles & scripts de vente, y compris les basiques de service.</li>
+      <li>Identifier les points forts et les priorités d’amélioration à court terme.</li>
+    </ul>
+
+    <h2>Déroulement</h2>
+    <ul>
+      <li>Brief & co-construction du scénario (profil client, contexte, attentes).</li>
+      <li>Visite terrain 100 % anonyme et factuelle (verbatim exact, preuves, minutage).</li>
+      <li>Rapport clair sous 48 h + plan d’actions ciblé et facilement pilotable.</li>
+    </ul>
+
+    <h2>Secteurs couverts</h2>
+    <p class="muted">Retail, automobile, restauration, hôtellerie, télécoms, énergie, services publics, santé.</p>
   </section>
 
-  <!-- Galerie d’illustrations (SVG intégrés) -->
-  <section id="galerie" class="card">
-    <h2>📸 Exemples observés (illustrations)</h2>
-    <div class="grid g-3">
+  <!-- Galerie BD en SVG inline -->
+  <section class="card">
+    <span class="pill">Galerie BD — exemples observés</span>
+    <div class="gallery">
 
-      <!-- 1. Accueil chaleureux (Retail) -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Accueil chaleureux en boutique">
-          <defs>
-            <linearGradient id="bg1" x1="0" x2="1">
-              <stop offset="0" stop-color="#e9f2ff"/>
-              <stop offset="1" stop-color="#eef8ff"/>
-            </linearGradient>
-          </defs>
-          <rect width="560" height="360" rx="16" fill="url(#bg1)"/>
-          <!-- Comptoir -->
-          <rect x="40" y="210" width="480" height="90" rx="12" fill="#113a68"/>
-          <rect x="40" y="210" width="480" height="16" fill="#0e2740"/>
-          <!-- Client -->
-          <circle cx="165" cy="150" r="32" fill="#ffd1c2"/>
-          <rect x="130" y="178" width="70" height="58" rx="12" fill="#22cc71"/>
-          <!-- Vendeur -->
-          <circle cx="395" cy="150" r="32" fill="#ffe1a6"/>
-          <rect x="360" y="178" width="70" height="58" rx="12" fill="#0e2740"/>
-          <!-- Bulles sourire -->
-          <circle cx="210" cy="120" r="8" fill="#22cc71"/>
-          <circle cx="215" cy="100" r="6" fill="#22cc71"/>
-          <circle cx="350" cy="110" r="8" fill="#22cc71"/>
-          <!-- Sac & caisse -->
-          <rect x="250" y="225" width="60" height="40" rx="8" fill="#ffd166"/>
-          <rect x="315" y="225" width="46" height="40" rx="8" fill="#ffb020"/>
-        </svg>
-        <figcaption>Accueil chaleureux en boutique</figcaption>
-        <span class="tag good">Sourire, bonjour, prise en charge rapide</span>
+      <!-- PANEL 1 — Accueil absent à la caisse -->
+      <figure class="panel">
+        <div class="svg-wrap">
+          <svg viewBox="0 0 960 600" role="img" aria-label="Caisse : accueil absent" xmlns="http://www.w3.org/2000/svg">
+            <!-- fond -->
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#0b132b"/>
+                <stop offset=".6" stop-color="#1c2541"/>
+                <stop offset="1" stop-color="#3a506b"/>
+              </linearGradient>
+              <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.25)"/>
+              </filter>
+            </defs>
+            <rect width="960" height="600" fill="url(#g1)"/>
+            <!-- comptoir -->
+            <rect x="80" y="360" width="420" height="140" rx="10" fill="#cbd5e1" />
+            <rect x="100" y="380" width="380" height="100" rx="8" fill="#e2e8f0" />
+            <rect x="130" y="310" width="90" height="60" rx="6" fill="#94a3b8"/>
+            <!-- employée blasée -->
+            <g filter="url(#soft)">
+              <circle cx="300" cy="220" r="110" fill="#ffcc99"/>
+              <ellipse cx="270" cy="220" rx="12" ry="6" fill="#334155"/>
+              <ellipse cx="330" cy="220" rx="12" ry="6" fill="#334155"/>
+              <rect x="245" y="310" width="110" height="30" rx="6" fill="#334155" opacity=".25"/>
+              <path d="M245 280 q55 40 110 0" stroke="#ef4444" stroke-width="10" fill="none" />
+              <path d="M210 360 h180 v-40 q0-18-18-18 h-144 q-18 0-18 18z" fill="#ef4444"/>
+              <rect x="365" y="330" width="36" height="18" rx="3" fill="#fde68a"/>
+            </g>
+            <!-- légende -->
+            <g font-family="system-ui,Segoe UI,Roboto,Arial" fill="#e5e7eb">
+              <text x="520" y="120" font-size="30" opacity=".9">Caisse — accueil absent</text>
+              <text x="520" y="170" font-size="20" opacity=".8">Regard fuyant, aucun “bonjour”, prise en charge tardive.</text>
+            </g>
+          </svg>
+        </div>
+        <h3>Accueil absent à la caisse</h3>
+        <p>Pas de salutations, aucun contact visuel. Le client attend sans être reconnu.</p>
       </figure>
 
-      <!-- 2. Conseil actif (Télécoms) -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Conseil actif en télécoms">
-          <rect width="560" height="360" rx="16" fill="#f1f5ff"/>
-          <!-- Comptoir -->
-          <rect x="40" y="230" width="480" height="70" rx="12" fill="#113a68"/>
-          <!-- Conseiller -->
-          <circle cx="160" cy="155" r="32" fill="#ffd1c2"/>
-          <rect x="125" y="183" width="70" height="58" rx="12" fill="#0e2740"/>
-          <!-- Client -->
-          <circle cx="400" cy="165" r="32" fill="#ffe1a6"/>
-          <rect x="365" y="193" width="70" height="58" rx="12" fill="#22cc71"/>
-          <!-- Téléphone mis en avant -->
-          <rect x="260" y="150" width="40" height="80" rx="8" fill="#7c3aed"/>
-          <rect x="266" y="156" width="28" height="52" rx="6" fill="#a78bfa"/>
-          <!-- Flèches conseil -->
-          <polygon points="240,160 230,150 230,170" fill="#7c3aed"/>
-          <polygon points="320,160 330,150 330,170" fill="#7c3aed"/>
-        </svg>
-        <figcaption>Conseil actif (démo produit & reformulation)</figcaption>
-        <span class="tag good">Écoute & explications claires</span>
+      <!-- PANEL 2 — Téléphone pendant l’échange -->
+      <figure class="panel">
+        <div class="svg-wrap">
+          <svg viewBox="0 0 960 600" role="img" aria-label="Téléphone pendant l’échange" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#111827"/>
+                <stop offset=".7" stop-color="#1f2937"/>
+                <stop offset="1" stop-color="#0ea5e9"/>
+              </linearGradient>
+              <filter id="soft2" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.25)"/>
+              </filter>
+            </defs>
+            <rect width="960" height="600" fill="url(#g2)"/>
+            <!-- client -->
+            <circle cx="820" cy="330" r="80" fill="#fde68a" filter="url(#soft2)"/>
+            <rect x="770" y="380" width="120" height="150" rx="20" fill="#86efac" filter="url(#soft2)"/>
+            <!-- conseillère + tel -->
+            <g filter="url(#soft2)">
+              <circle cx="380" cy="250" r="110" fill="#fca5a5"/>
+              <rect x="320" y="360" width="120" height="170" rx="22" fill="#ef4444"/>
+              <rect x="420" y="260" width="70" height="110" rx="10" fill="#fde047" stroke="#111827" stroke-width="6"/>
+              <circle cx="350" cy="250" r="10" fill="#111827"/>
+              <circle cx="410" cy="250" r="10" fill="#111827"/>
+              <path d="M340 290 q40 25 80 0" stroke="#111827" stroke-width="8" fill="none"/>
+            </g>
+            <g font-family="system-ui,Segoe UI,Roboto,Arial" fill="#f0f9ff">
+              <text x="60" y="120" font-size="30" opacity=".95">Téléphone pendant l’échange</text>
+              <text x="60" y="165" font-size="20" opacity=".85">La conseillère consulte son smartphone et perd le fil du besoin.</text>
+            </g>
+          </svg>
+        </div>
+        <h3>Téléphone pendant l’échange</h3>
+        <p>Usage du smartphone face au client : perte d’attention et d’efficacité.</p>
       </figure>
 
-      <!-- 3. Caisse rapide (Retail alimentaire) -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Caisse rapide et compétente">
-          <rect width="560" height="360" rx="16" fill="#eefcf7"/>
-          <rect x="60" y="230" width="440" height="76" rx="12" fill="#22cc71"/>
-          <!-- Caisse -->
-          <rect x="320" y="180" width="120" height="40" rx="8" fill="#0e2740"/>
-          <rect x="335" y="188" width="40" height="24" rx="6" fill="#113a68"/>
-          <!-- Client & hôte -->
-          <circle cx="140" cy="170" r="30" fill="#ffd1c2"/>
-          <circle cx="260" cy="160" r="30" fill="#ffe1a6"/>
-          <!-- Timer rapide -->
-          <circle cx="470" cy="120" r="22" fill="#fff"/>
-          <path d="M470 120 m-18 0 a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0" fill="none" stroke="#0e2740" stroke-width="3"/>
-          <path d="M470 120 v-10" stroke="#0e2740" stroke-width="3" stroke-linecap="round"/>
-          <path d="M470 120 h10" stroke="#0e2740" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <figcaption>Caisse rapide & compétente</figcaption>
-        <span class="tag good">Fluidité & exactitude</span>
+      <!-- PANEL 3 — Guichet : ton sec et injonctif -->
+      <figure class="panel">
+        <div class="svg-wrap">
+          <svg viewBox="0 0 960 600" role="img" aria-label="Guichet : ton sec" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#0f172a"/>
+                <stop offset=".5" stop-color="#1e293b"/>
+                <stop offset="1" stop-color="#334155"/>
+              </linearGradient>
+              <filter id="soft3" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,.25)"/>
+              </filter>
+            </defs>
+            <rect width="960" height="600" fill="url(#g3)"/>
+            <!-- comptoir guichet -->
+            <rect x="80" y="420" width="800" height="110" rx="14" fill="#e5e7eb"/>
+            <rect x="120" y="380" width="380" height="60" rx="10" fill="#94a3b8"/>
+            <!-- agent ferme / doigt levé -->
+            <g filter="url(#soft3)">
+              <circle cx="640" cy="250" r="110" fill="#c7d2fe"/>
+              <rect x="590" y="340" width="100" height="160" rx="18" fill="#1f2937"/>
+              <rect x="620" y="330" width="60" height="35" rx="6" fill="#60a5fa"/>
+              <!-- bras -->
+              <path d="M680 360 q80 30 40 80" stroke="#1f2937" stroke-width="26" fill="none"/>
+              <circle cx="730" cy="450" r="16" fill="#1f2937"/>
+              <!-- visage -->
+              <circle cx="610" cy="240" r="10" fill="#111827"/>
+              <circle cx="670" cy="240" r="10" fill="#111827"/>
+              <path d="M610 280 q30 -18 60 0" stroke="#111827" stroke-width="8" fill="none"/>
+            </g>
+            <g font-family="system-ui,Segoe UI,Roboto,Arial" fill="#eaf2ff">
+              <text x="140" y="150" font-size="30">Guichet — ton sec et injonctif</text>
+              <text x="140" y="190" font-size="20" opacity=".9">Rappel à l’ordre sans écoute, climat crispé, issue négative.</text>
+            </g>
+          </svg>
+        </div>
+        <h3>Guichet : ton sec</h3>
+        <p>Posture fermée, injonctions. On perd la coopération du client.</p>
       </figure>
 
-      <!-- 4. Garage – prise en charge -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garage : prise en charge claire">
-          <rect width="560" height="360" rx="16" fill="#f4f7ff"/>
-          <!-- Voiture -->
-          <rect x="70" y="210" width="220" height="60" rx="30" fill="#0ea5e9"/>
-          <circle cx="115" cy="270" r="18" fill="#0e2740"/>
-          <circle cx="245" cy="270" r="18" fill="#0e2740"/>
-          <!-- Mécanicien -->
-          <circle cx="420" cy="160" r="30" fill="#ffe1a6"/>
-          <rect x="385" y="188" width="70" height="58" rx="12" fill="#22cc71"/>
-          <!-- Clé / check -->
-          <path d="M460 120 l18 -12 l8 12 l-18 12z" fill="#ffd166"/>
-          <circle cx="480" cy="120" r="6" fill="#113a68"/>
-        </svg>
-        <figcaption>Garage : accueil & devis transparents</figcaption>
-        <span class="tag good">Explication simple des étapes</span>
-      </figure>
-
-      <!-- 5. Restauration – service attentif -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Restauration : service attentif">
-          <rect width="560" height="360" rx="16" fill="#fff7ed"/>
-          <!-- Table -->
-          <rect x="120" y="200" width="320" height="70" rx="14" fill="#ffb020"/>
-          <!-- Serveuse -->
-          <circle cx="170" cy="150" r="28" fill="#ffd1c2"/>
-          <rect x="140" y="174" width="60" height="54" rx="12" fill="#ef4444"/>
-          <!-- Plateau -->
-          <circle cx="360" cy="170" r="20" fill="#fff"/>
-          <rect x="350" y="186" width="20" height="12" rx="4" fill="#fff"/>
-        </svg>
-        <figcaption>Restauration : attention & rythme adaptés</figcaption>
-        <span class="tag warn">Temps d’attente surveillés</span>
-      </figure>
-
-      <!-- 6. Guichet – posture à corriger (exemple pédagogique) -->
-      <figure class="scene">
-        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guichet : posture distante (à corriger)">
-          <rect width="560" height="360" rx="16" fill="#fff2f2"/>
-          <rect x="60" y="230" width="440" height="76" rx="12" fill="#fca5a5"/>
-          <!-- Agent -->
-          <circle cx="180" cy="150" r="28" fill="#ffe1a6"/>
-          <rect x="150" y="174" width="60" height="54" rx="12" fill="#991b1b"/>
-          <!-- Client -->
-          <circle cx="380" cy="160" r="28" fill="#ffd1c2"/>
-          <rect x="350" y="184" width="60" height="44" rx="12" fill="#ef4444"/>
-          <!-- Téléphone qui distrait -->
-          <rect x="205" y="140" width="20" height="32" rx="4" fill="#0e2740"/>
-          <rect x="208" y="143" width="14" height="22" rx="3" fill="#334155"/>
-        </svg>
-        <figcaption>Guichet : posture distante (exemple à corriger)</figcaption>
-        <span class="tag bad">Regard & disponibilité insuffisants</span>
-      </figure>
-
-    </div>
-    <p class="muted">Ces scènes illustratives montrent des points d’attention fréquents. Le rapport détaille les observations factuelles, verbatim et recommandations actionnables.</p>
-    <div class="actions">
-      <a class="btn" href="index.html#devis">Je veux un devis</a>
-      <a class="btn" href="charte.html" style="background:#0e2740">Voir la charte</a>
     </div>
   </section>
 
+  <!-- AUDITS QUALITÉ -->
+  <section id="audits" class="card">
+    <span class="pill">Audits qualité</span>
+    <h2>Ce que nous auditons</h2>
+    <div class="grid grid-3">
+      <ul>
+        <li>Standards d’accueil et de service (délais, courtoisie, langage, reformulation).</li>
+        <li>Propreté & hygiène (espaces, sanitaires, zones sensibles).</li>
+        <li>Conformité procédures & sécurité (HACCP, signalétique, tenue, EPI).</li>
+      </ul>
+      <ul>
+        <li>Merchandising & disponibilité (linéaires, facing, ruptures, balisage prix).</li>
+        <li>Parcours client (orientation, clarté de l’offre, frictions, encaissement).</li>
+        <li>Accessibilité & confidentialité (guichets, files, documents).</li>
+      </ul>
+      <ul>
+        <li>Mesures chiffrées avec seuils, photos-preuves géolocalisées.</li>
+        <li>Tableau de conformité + plan d’actions priorisé.</li>
+        <li>Relecture opérationnelle et consolidation multisites.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CHARTE COMPORTEMENT -->
+  <section id="charte" class="card">
+    <span class="pill">Charte de comportement</span>
+    <h2>Principes clés</h2>
+    <div class="grid grid-3">
+      <ul>
+        <li><strong>Accueil</strong> : sourire visible, bonjour, reconnaissance rapide, regard franc.</li>
+        <li><strong>Écoute</strong> : questions ouvertes, reformulation, validation du besoin.</li>
+        <li><strong>Conseil</strong> : solutions claires, bénéfices, preuve/essai si utile.</li>
+      </ul>
+      <ul>
+        <li><strong>Transparence</strong> : prix, délais, limites/risques énoncés simplement.</li>
+        <li><strong>Clôture</strong> : récapitulatif, prochaine étape, remerciement.</li>
+        <li><strong>Posture</strong> : empathie, langage positif, téléphone hors interaction.</li>
+      </ul>
+      <ul>
+        <li><strong>Conformité</strong> : procédures, sécurité, confidentialité (RGPD, documents).</li>
+        <li><strong>Feedback</strong> : autoévaluation, co-apprentissage, partage bonnes pratiques.</li>
+        <li><strong>Exemplarité</strong> : tenue soignée, badge visible, ponctualité.</li>
+      </ul>
+    </div>
+
+    <h2>Contrôle & suivi</h2>
+    <p class="muted">Les visites mystère vérifient l’application réelle de la charte, identifient les écarts et accélèrent les corrections via un plan d’actions concret (priorités, responsables, échéances).</p>
+    <a class="btn" href="index.html">← Retour à l’accueil</a>
+  </section>
 </main>
 
 <footer>
-  © 2025 Claryscope — Visites mystère & amélioration de l’expérience client
+  © 2025 Claryscope — Illustrations SVG intégrées (aucun fichier image requis)
 </footer>
 
 </body>
