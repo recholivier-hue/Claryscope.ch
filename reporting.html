@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reporting – Claryscope</title>
+  <meta name="description" content="Rapports clairs et actionnables : envoi sous 12–24 h. Consolidation multi-sites et suivi sous 5–7 jours selon volume." />
+  <style>
+    :root{ --brand:#0d2a4a; --bg:#f4f7fb; --card:#fff; --text:#12243a; --muted:#516b84; --shadow:0 10px 30px rgba(2,18,42,.08); --radius:14px }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg) }
+
+    /* En-tête + nav */
+    header{ background:var(--brand); color:#fff; padding:48px 16px 40px; text-align:center }
+    header h1{ margin:0 0 10px; font-size:44px; letter-spacing:.2px }
+    header p{ margin:0 0 14px; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55 }
+    .site-nav{ margin-top:18px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap }
+    .site-nav a{ color:#fff; opacity:.9; padding:6px 12px; border-radius:8px; text-decoration:none; transition:background .2s }
+    .site-nav a:hover, .site-nav a.active{ background:rgba(255,255,255,.14); opacity:1 }
+
+    /* Contenu */
+    .wrap{ max-width:1050px; margin:-36px auto 56px; padding:0 16px }
+    .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px 24px }
+    .card h2{ margin:0 0 12px; font-size:26px; color:var(--brand) }
+    .card h3{ margin:26px 0 10px; font-size:22px; color:var(--brand) }
+    .muted{ color:var(--muted) }
+    ul{ margin:10px 0 18px 1.2rem }
+    li{ margin:6px 0; line-height:1.55 }
+    .grid{ display:grid; gap:18px }
+    .g2{ grid-template-columns:repeat(2,1fr) }
+    @media (max-width:900px){ .g2{ grid-template-columns:1fr } }
+
+    .pill{ display:inline-block; background:#eef2f7; color:#0d2a4a; border:1px solid #dbe2ea; padding:4px 10px; border-radius:999px; font-size:13px; font-weight:700 }
+    .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; text-decoration:none; padding:12px 16px; border-radius:10px; margin-top:18px }
+
+    /* Encarts délais */
+    .band{ display:grid; gap:16px; grid-template-columns:repeat(3,1fr); margin:10px 0 6px }
+    @media (max-width:900px){ .band{ grid-template-columns:1fr } }
+    .tile{ background:#f8fafc; border:1px solid #e5e7eb; border-radius:12px; padding:14px }
+    .tile strong{ color:#0d2a4a }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Reporting</h1>
+    <p>Rapports clairs, visuels et actionnables. Envoi standard sous <strong>12–24&nbsp;h</strong>. Possibilité de consolidation et <strong>suivi</strong> sous <strong>5–7&nbsp;jours</strong> selon le volume.</p>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="visites-mystere.html">Visites</a>
+      <a href="audits-qualite.html">Audits</a>
+      <a href="reporting.html" class="active">Reporting</a>
+      <a href="charte.html">Charte</a>
+    </nav>
+  </header>
+
+  <!-- CONTENU -->
+  <main class="wrap">
+    <article class="card">
+      <span class="pill">Délais & engagement</span>
+      <h2>Quand recevez-vous le rapport&nbsp;?</h2>
+      <div class="band">
+        <div class="tile">
+          <strong>Standard : 12–24 h</strong>
+          <p class="muted">Après la visite, nous livrons le rapport détaillé (PDF + tableur) sous 12 à 24&nbsp;heures.</p>
+        </div>
+        <div class="tile">
+          <strong>Suivi / multi-sites : 5–7 jours</strong>
+          <p class="muted">Consolidation, tendances, priorités et plan d’actions regroupés sous 5 à 7&nbsp;jours (selon volume).</p>
+        </div>
+        <div class="tile">
+          <strong>Cas particuliers</strong>
+          <p class="muted">Si des éléments externes sont attendus (tiers, validations), le délai est confirmé à l’avance.</p>
+        </div>
+      </div>
+
+      <h3>Contenu du rapport</h3>
+      <div class="grid g2">
+        <div>
+          <ul>
+            <li><strong>Résumé exécutif</strong> : points forts, urgences, priorités (RAG).</li>
+            <li><strong>Scorecards</strong> par axe (accueil, hygiène, conformité, vente).</li>
+            <li><strong>Preuves</strong> : verbatim, horodatage, photos/documents si fournis.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Écarts & impacts client</strong> (ce que ça change concrètement).</li>
+            <li><strong>Plan d’actions</strong> : responsables, échéances, indicateurs.</li>
+            <li><strong>Tableau de bord</strong> (option) : tendances multi-sites.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Formats livrés</h3>
+      <ul>
+        <li><strong>PDF</strong> prêt à partager (mise en page claire).</li>
+        <li><strong>CSV/Excel</strong> pour l’historique et les KPI.</li>
+        <li><strong>Version “terrain”</strong> courte pour briefer les équipes.</li>
+      </ul>
+
+      <h3>Processus</h3>
+      <ol>
+        <li><strong>Réception de la mission</strong> → cadrage, objectifs, checklist.</li>
+        <li><strong>Analyse & preuves</strong> → tri, anonymisation si besoin.</li>
+        <li><strong>Rédaction & scorecards</strong> → plan d’actions priorisé.</li>
+        <li><strong>Envoi 12–24 h</strong> → puis <strong>suivi 5–7 jours</strong> (consolidation/relances).</li>
+      </ol>
+
+      <a class="back" href="index.html">← Retour à l’accueil</a>
+    </article>
+  </main>
+
+</body>
+</html>
