@@ -41,8 +41,8 @@
     header.top{background:var(--brand);color:#fff;position:sticky;top:0;z-index:20}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand svg{height:52px;margin-right:8px}      /* ← logo 2× */
-    .brand span{font-size:1.6rem}                  /* ← texte plus grand */
+    .brand svg{height:52px;margin-right:8px}      /* logo doublé */
+    .brand span{font-size:1.6rem}                  /* texte plus grand */
     .menu{display:flex;gap:18px;align-items:center}
     .menu a{color:#e5e7eb;padding:6px 8px;border-radius:8px}
     .menu a.active{background:#0a1d31;color:#fff;font-weight:700}
@@ -268,12 +268,9 @@
       form.addEventListener('submit',async e=>{
         e.preventDefault(); msg.textContent='Envoi en cours…';
         try{ await new Promise(r=>setTimeout(r,600)); msg.textContent='Merci ! Votre demande a bien été envoyée.'; msg.style.color='#16a34a'; form.reset(); }
-        catch{ msg.textContent='Erreur. Merci de réessayer.'; msg.style.color='#b91c1c';}
+        catch{ msg.textContent='Erreur. Merci de réessayer.'; msg.style.color:'#b91c1c';}
       });
     })();
   </script>
 </body>
 </html>
-
-</html>
-
