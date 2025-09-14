@@ -1,166 +1,164 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audits qualité – Claryscope</title>
-  <style>
-    :root{
-      --brand:#0d2a4a;
-      --bg:#f4f7fb;
-      --card:#fff;
-      --text:#12243a;
-      --muted:#516b84;
-      --shadow:0 10px 30px rgba(2,18,42,.08);
-      --radius:14px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      color:var(--text);
-      background:var(--bg);
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Audits qualité – Claryscope</title>
+<meta name="description" content="Audits qualité opérationnels : standards, dossier de preuve, scoring et plan d'actions priorisé. Illustrations SVG intégrées.">
+<style>
+  :root{
+    --brand:#0e2740; --brand-2:#113a68; --ink:#0f172a; --muted:#5c6b7a;
+    --bg:#f5f7fb; --card:#ffffff; --accent:#22cc71; --r:16px; --shadow:0 10px 32px rgba(15,23,42,.08);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  header{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
+  .nav{max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;gap:20px;align-items:center;justify-content:space-between}
+  .brand{display:flex;gap:10px;align-items:center;font-weight:800}
+  .brand svg{width:28px;height:28px}
+  .menu a{color:#e7eef7;text-decoration:none;padding:8px 12px;border-radius:10px}
+  .menu a.active,.menu a:hover{background:rgba(255,255,255,.14);color:#fff}
+  .hero{max-width:1200px;margin:0 auto;padding:46px 20px 54px}
+  .hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px)}
+  .hero p{margin:0;max-width:75ch;color:#d9e4f0}
 
-    /* Bandeau bleu */
-    header{
-      background:var(--brand);
-      color:#fff;
-      padding:48px 16px 40px;
-      text-align:center;
-    }
-    header h1{
-      margin:0 0 10px;
-      font-size:44px;
-      letter-spacing:.2px;
-    }
-    header p{
-      margin:0 0 14px;
-      opacity:.95;
-      font-size:18px;
-      max-width:900px;
-      margin-inline:auto;
-      line-height:1.55;
-    }
+  .wrap{max-width:1100px;margin:-30px auto 80px;padding:0 20px}
+  .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--r);box-shadow:var(--shadow);padding:26px}
+  h2{font-size:clamp(20px,2.3vw,28px);margin:0 0 14px;color:var(--brand)}
+  h3{font-size:clamp(18px,2vw,22px);margin:22px 0 10px;color:var(--brand)}
+  p.muted{color:var(--muted)}
+  .grid{display:grid;gap:18px}
+  .g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){.g-2,.g-3{grid-template-columns:1fr}}
 
-    /* Menu de navigation */
-    .site-nav{
-      margin-top:18px;
-      display:flex;
-      gap:14px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .site-nav a{
-      color:#fff;
-      opacity:.9;
-      padding:6px 12px;
-      border-radius:8px;
-      text-decoration:none;
-      transition:background .2s;
-    }
-    .site-nav a:hover,
-    .site-nav a.active{
-      background:rgba(255,255,255,.14);
-      opacity:1;
-    }
+  .scene{background:#fff;border:1px solid #e9eef5;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px}
+  .scene svg{width:100%;height:auto;border-radius:12px}
+  .scene figcaption{font-weight:600}
+  .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:13px}
+  .ok{background:#ecfdf5;color:#065f46}
+  .warn{background:#fff7ed;color:#92400e}
+  .bad{background:#fef2f2;color:#991b1b}
 
-    /* Carte centrale */
-    .wrap{
-      max-width:1050px;
-      margin:-36px auto 56px;
-      padding:0 16px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:28px 26px 10px;
-    }
-
-    .card h2{
-      margin:0 0 18px;
-      font-size:26px;
-      color:var(--brand);
-      letter-spacing:.2px;
-    }
-    .card h3{
-      margin:26px 0 10px;
-      font-size:22px;
-      color:var(--brand);
-      letter-spacing:.2px;
-    }
-    .card p{color:var(--muted)}
-    .card ul{
-      margin:10px 0 22px 1.2rem;
-    }
-    .card li{
-      margin:6px 0;
-      line-height:1.55;
-    }
-
-    .back{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:var(--brand);
-      color:#fff;
-      border:none;
-      text-decoration:none;
-      padding:12px 16px;
-      border-radius:10px;
-      margin:22px 0 26px;
-      box-shadow:0 6px 16px rgba(13,42,74,.18);
-      transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;
-    }
-    .back:hover{ transform:translateY(-1px); box-shadow:0 9px 22px rgba(13,42,74,.22); }
-    .back:active{ transform:translateY(0); opacity:.92; }
-  </style>
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;padding:12px 16px;border-radius:12px;font-weight:700}
+  .btn:hover{filter:brightness(1.06)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+</style>
 </head>
 <body>
 
-  <!-- Bandeau + menu -->
-  <header>
-    <h1>Audits qualité</h1>
-    <p>Nous vérifions la conformité, la propreté et les standards de service dans divers secteurs.</p>
-
-    <nav class="site-nav">
+<header>
+  <div class="nav">
+    <div class="brand">
+      <svg viewBox="0 0 96 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 52 36 20 50 34 64 14 88 52" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M36 20 50 34 64 14 88 52H8Z" fill="#fff" opacity=".12"/>
+      </svg>
+      <span>Claryscope</span>
+    </div>
+    <nav class="menu">
       <a href="index.html">Accueil</a>
       <a href="visites-mystere.html">Visites</a>
       <a href="audits-qualite.html" class="active">Audits</a>
-      <a href="feedback-coaching.html">Coaching</a>
       <a href="charte.html">Charte</a>
-      <a href="carte.html">Carte</a>
     </nav>
-  </header>
+  </div>
+  <div class="hero">
+    <h1>Audits qualité</h1>
+    <p>Des audits opérationnels et mesurables : standards d’accueil, propreté, conformité, merchandising, sécurité & process. Un dossier de preuves étayé et un plan d’actions priorisé, livrés rapidement.</p>
+  </div>
+</header>
 
-  <main class="wrap">
-    <article class="card">
-      <h2>Ce que nous auditons</h2>
-      <ul>
-        <li>Respect des procédures internes et normes ISO</li>
-        <li>Propreté, hygiène et sécurité (HACCP, normes sanitaires)</li>
-        <li>Qualité de l’accueil et du service client</li>
-        <li>Mise en avant et respect des standards de merchandising</li>
-        <li>Application des règles de sécurité et conformité légale</li>
-      </ul>
+<main class="wrap">
 
-      <h3>Secteurs audités</h3>
-      <ul>
-        <li>🏬 <strong>Commerces de détail</strong> (supermarchés, boutiques spécialisées)</li>
-        <li>🍽️ <strong>Restaurants & cafés</strong> (hygiène, rapidité du service, accueil)</li>
-        <li>🚗 <strong>Automobile</strong> (concessions, garages, ateliers)</li>
-        <li>🏨 <strong>Hôtellerie</strong> (espaces communs, chambres, restauration)</li>
-        <li>🏦 <strong>Banques & assurances</strong> (accueil client, confidentialité, efficacité)</li>
-        <li>📶 <strong>Télécoms & énergie</strong> (explications claires, rapidité, accompagnement)</li>
-      </ul>
+  <section class="card">
+    <div class="grid g-2">
+      <div>
+        <h2>🎯 Finalité</h2>
+        <ul>
+          <li>Évaluer objectivement la conformité aux standards internes et réglementaires.</li>
+          <li>Mesurer l’exécution opérationnelle (accueil, files, signalétique, tenue, hygiène, sécurité, étiquetage, prix, PLV).</li>
+          <li>Identifier les écarts critiques, quantifier l’impact et proposer des mesures correctives.</li>
+        </ul>
+        <p class="muted">Chaque point est sourcé (photo, mesure, référence de standard), tracé et pondéré.</p>
+      </div>
+      <div>
+        <h2>🧭 Méthodologie</h2>
+        <ul>
+          <li>Questionnaire sur-mesure (check-list) aligné à votre charte & à la réglementation.</li>
+          <li>Audit in situ (ou distant) : relevés, minutages, inspection visuelle & documentaire.</li>
+          <li>Scoring pondéré, heatmap par rayon/poste, hiérarchisation des actions (RICE/effort/impact).</li>
+          <li>Débrief structuré avec les responsables du site.</li>
+        </ul>
+      </div>
+    </div>
 
-      <h3>Livrables</h3>
-      <p>Rapport d’audit détaillé, tableau de conformité, recommandations pratiques et plan d’amélioration.</p>
+    <h3>📦 Livrables</h3>
+    <ul>
+      <li>Tableau de bord (score global, par chapitre, par site) + historique pour le suivi des progrès.</li>
+      <li>Dossier de preuves : photos annotées, verbatim, horodatage, références de standards.</li>
+      <li>Plan d’actions priorisé : qui fait quoi, d’ici quand, avec quick-wins et actions structurelles.</li>
+      <li>Recommandations de prévention (risques H&S / expérience client / réputation).</li>
+    </ul>
+  </section>
 
-      <a class="back" href="index.html">← Retour à l’accueil</a>
-    </article>
-  </main>
+  <section class="card">
+    <h2>🔍 Exemples d’audit (illustrations)</h2>
+    <div class="grid g-3">
+      <!-- Propreté & hygiène -->
+      <figure class="scene">
+        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Propreté & hygiène">
+          <rect width="560" height="360" rx="16" fill="#eefcf7"/>
+          <rect x="70" y="220" width="420" height="80" rx="14" fill="#22cc71"/>
+          <circle cx="150" cy="160" r="30" fill="#ffd1c2"/>
+          <rect x="120" y="185" width="60" height="52" rx="10" fill="#0e2740"/>
+          <rect x="240" y="150" width="80" height="18" rx="6" fill="#fff"/>
+          <rect x="240" y="172" width="80" height="10" rx="5" fill="#d1fae5"/>
+          <rect x="330" y="150" width="120" height="18" rx="6" fill="#fff"/>
+        </svg>
+        <figcaption>Propreté & hygiène</figcaption>
+        <span class="tag ok">Sol, caisses, sanitaires, zones clients</span>
+      </figure>
 
+      <!-- Conformité prix/étiquettes -->
+      <figure class="scene">
+        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Conformité prix & étiquetage">
+          <rect width="560" height="360" rx="16" fill="#f1f5ff"/>
+          <rect x="90" y="220" width="380" height="80" rx="14" fill="#113a68"/>
+          <rect x="120" y="140" width="90" height="56" rx="10" fill="#60a5fa"/>
+          <rect x="230" y="140" width="90" height="56" rx="10" fill="#93c5fd"/>
+          <rect x="340" y="140" width="90" height="56" rx="10" fill="#60a5fa"/>
+          <rect x="140" y="204" width="50" height="10" rx="5" fill="#fff"/>
+          <rect x="250" y="204" width="50" height="10" rx="5" fill="#fff"/>
+          <rect x="360" y="204" width="50" height="10" rx="5" fill="#fff"/>
+        </svg>
+        <figcaption>Conformité prix & étiquetage</figcaption>
+        <span class="tag warn">Écarts signalés & corrigés</span>
+      </figure>
+
+      <!-- Sécurité & accessibilité -->
+      <figure class="scene">
+        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sécurité & accessibilité">
+          <rect width="560" height="360" rx="16" fill="#fff7ed"/>
+          <rect x="70" y="230" width="420" height="70" rx="14" fill="#ffb020"/>
+          <circle cx="160" cy="160" r="28" fill="#ffe1a6"/>
+          <rect x="130" y="184" width="60" height="48" rx="10" fill="#ef4444"/>
+          <rect x="260" y="150" width="200" height="18" rx="6" fill="#fff"/>
+          <rect x="260" y="172" width="160" height="12" rx="6" fill="#fde68a"/>
+        </svg>
+        <figcaption>Sécurité & accessibilité</figcaption>
+        <span class="tag bad">Issues, signalétique, obstacles</span>
+      </figure>
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="index.html#devis">Lancer un audit</a>
+      <a class="btn" href="charte.html" style="background:#0e2740">Voir la charte</a>
+    </div>
+  </section>
+
+</main>
+
+<footer style="text-align:center;color:#789;padding:18px 0">© 2025 Claryscope — Audits qualité & amélioration continue</footer>
 </body>
 </html>
