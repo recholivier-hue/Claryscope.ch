@@ -41,8 +41,8 @@
     header.top{background:var(--brand);color:#fff;position:sticky;top:0;z-index:20}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    /* >>> Logo doublé et léger espace à droite */
-    .brand svg{height:52px;margin-right:8px}
+    .brand svg{height:52px;margin-right:8px}      /* ← logo 2× */
+    .brand span{font-size:1.6rem}                  /* ← texte plus grand */
     .menu{display:flex;gap:18px;align-items:center}
     .menu a{color:#e5e7eb;padding:6px 8px;border-radius:8px}
     .menu a.active{background:#0a1d31;color:#fff;font-weight:700}
@@ -235,12 +235,11 @@
       <div class="grid grid-2">
         <div>
           <a class="brand" href="#" style="color:#fff">
-            <!-- >>> Logo footer aussi en 52px pour cohérence -->
             <svg viewBox="0 0 96 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="height:52px">
               <path d="M8 52 36 20 50 34 64 14 88 52" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
               <path d="M36 20 50 34 64 14 88 52H8Z" fill="#fff" opacity=".12"/>
             </svg>
-            <span>Claryscope</span>
+            <span style="font-size:1.6rem">Claryscope</span>
           </a>
           <p class="muted">Contrôle qualité & visites terrain — Suisse romande</p>
         </div>
@@ -274,5 +273,7 @@
     })();
   </script>
 </body>
+</html>
+
 </html>
 
