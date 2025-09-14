@@ -1,62 +1,146 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charte de comportement – Claryscope</title>
-  <style>
-    :root{ --brand:#0d2a4a; --bg:#f4f7fb; --card:#fff; --text:#12243a; --muted:#516b84; --shadow:0 10px 30px rgba(2,18,42,.08); --radius:14px; }
-    *{box-sizing:border-box}
-    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:var(--bg);}
-    header{ background:var(--brand); color:#fff; padding:48px 16px 60px; text-align:center;}
-    header h1{ margin:0 0 10px; font-size:44px; letter-spacing:.2px;}
-    header p{ margin:0; opacity:.95; font-size:18px; max-width:900px; margin-inline:auto; line-height:1.55;}
-    .site-nav{ margin-top:18px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-    .site-nav a{ color:#fff; opacity:.9; padding:6px 12px; border-radius:8px; text-decoration:none; transition:background .2s; }
-    .site-nav a:hover, .site-nav a.active{ background:rgba(255,255,255,.14); opacity:1; }
-    .wrap{ max-width:1050px; margin:-36px auto 56px; padding:0 16px;}
-    .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 26px 32px;}
-    .card h2{ margin:0 0 18px; font-size:26px; color:var(--brand); letter-spacing:.2px;}
-    .card p{ color:var(--text); margin-bottom:18px; line-height:1.6;}
-    .card ul{ margin:10px 0 22px 1.2rem;}
-    .card li{ margin:6px 0; line-height:1.55;}
-    .back{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; border:none; text-decoration:none; padding:12px 16px; border-radius:10px; margin-top:22px; box-shadow:0 6px 16px rgba(13,42,74,.18); transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;}
-    .back:hover{ transform:translateY(-1px); box-shadow:0 9px 22px rgba(13,42,74,.22);}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Charte de comportement – Claryscope</title>
+<meta name="description" content="Charte de comportement & qualité de service : principes, standards mesurables, interdits, check-list front/back, et suivi.">
+<style>
+  :root{
+    --brand:#0e2740; --brand-2:#113a68; --ink:#0f172a; --muted:#5c6b7a;
+    --bg:#f5f7fb; --card:#ffffff; --accent:#22cc71; --r:16px; --shadow:0 10px 32px rgba(15,23,42,.08);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  header{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
+  .nav{max-width:1200px;margin:0 auto;padding:18px 20px;display:flex;gap:20px;align-items:center;justify-content:space-between}
+  .brand{display:flex;gap:10px;align-items:center;font-weight:800}
+  .brand svg{width:28px;height:28px}
+  .menu a{color:#e7eef7;text-decoration:none;padding:8px 12px;border-radius:10px}
+  .menu a.active,.menu a:hover{background:rgba(255,255,255,.14);color:#fff}
+  .hero{max-width:1200px;margin:0 auto;padding:46px 20px 54px}
+  .hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px)}
+  .hero p{margin:0;max-width:80ch;color:#d9e4f0}
+
+  .wrap{max-width:1100px;margin:-30px auto 80px;padding:0 20px}
+  .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--r);box-shadow:var(--shadow);padding:26px}
+  h2{font-size:clamp(20px,2.3vw,28px);margin:0 0 14px;color:var(--brand)}
+  h3{font-size:clamp(18px,2vw,22px);margin:22px 0 10px;color:var(--brand)}
+  p.muted{color:var(--muted)}
+  .grid{display:grid;gap:18px}
+  .g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g-2{grid-template-columns:1fr}}
+
+  .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:13px}
+  .ok{background:#ecfdf5;color:#065f46}
+  .warn{background:#fff7ed;color:#92400e}
+  .bad{background:#fef2f2;color:#991b1b}
+
+  .list{margin:0;padding-left:1.2rem}
+  .list li{margin:6px 0}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;padding:12px 16px;border-radius:12px;font-weight:700}
+  .btn:hover{filter:brightness(1.06)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Charte de comportement</h1>
-    <p>Garantir une expérience client irréprochable par des gestes simples et constants.</p>
-    <nav class="site-nav">
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <svg viewBox="0 0 96 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 52 36 20 50 34 64 14 88 52" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M36 20 50 34 64 14 88 52H8Z" fill="#fff" opacity=".12"/>
+      </svg>
+      <span>Claryscope</span>
+    </div>
+    <nav class="menu">
       <a href="index.html">Accueil</a>
       <a href="visites-mystere.html">Visites</a>
       <a href="audits-qualite.html">Audits</a>
-      <a href="feedback-coaching.html">Coaching</a>
       <a href="charte.html" class="active">Charte</a>
-      <a href="carte.html">Carte</a>
     </nav>
-  </header>
+  </div>
+  <div class="hero">
+    <h1>Charte de comportement</h1>
+    <p>Garantir une expérience client irréprochable par des gestes simples, constants et mesurables. Cette charte alimente les grilles d’audit et les visites mystère.</p>
+  </div>
+</header>
 
-  <main class="wrap">
-    <article class="card">
-      <h2>Principes fondamentaux</h2>
-      <p>Chez Claryscope, nous nous engageons à garantir une expérience client irréprochable en toutes circonstances. Cette charte définit les principes de comportement attendus de chaque collaborateur, partenaire et intervenant mandaté, afin d’assurer un niveau d’excellence constant et mesurable.</p>
-      <ul>
-        <li><strong>Accueil et disponibilité :</strong> sourire, bonjour, prise en charge rapide et proactive.</li>
-        <li><strong>Communication claire et respectueuse :</strong> écoute active, langage précis et adapté, ton courtois et bienveillant.</li>
-        <li><strong>Posture professionnelle :</strong> attitude calme, présentation soignée, ponctualité et discrétion.</li>
-        <li><strong>Application rigoureuse des procédures :</strong> respect strict des protocoles internes, normes de sécurité et bonnes pratiques d’hygiène.</li>
-        <li><strong>Confidentialité :</strong> toutes les informations recueillies dans le cadre des missions sont protégées et partagées uniquement à des fins d’amélioration.</li>
-        <li><strong>Clôture maîtrisée :</strong> reformulation des points clés, prochaine étape clairement indiquée, remerciements sincères.</li>
-      </ul>
+<main class="wrap">
 
-      <h2>Contrôle & suivi</h2>
-      <p>La visite mystère vérifie l’application réelle de la charte, identifie les écarts et accélère les corrections. Chaque rapport fournit des preuves objectives et mesurables, permettant d’ancrer ces principes dans les pratiques quotidiennes et de renforcer durablement la satisfaction client.</p>
+  <section class="card">
+    <div class="grid g-2">
+      <div>
+        <h2>🔑 Principes clés</h2>
+        <ul class="list">
+          <li><strong>Accueil chaleureux :</strong> sourire visible, bonjour, prise en charge &lt; 30 s.</li>
+          <li><strong>Écoute active :</strong> question ouverte, reformulation, vérification des besoins.</li>
+          <li><strong>Clarté :</strong> vocabulaire simple, étapes annoncées, alternatives proposées.</li>
+          <li><strong>Respect :</strong> posture ouverte, ton calme, confidentialité des échanges.</li>
+          <li><strong>Clôture maîtrisée :</strong> récapitulatif, prochaine étape, remerciement.</li>
+        </ul>
+        <span class="tag ok">Standards mesurables</span>
+      </div>
+      <div>
+        <h2>📏 Standards mesurables</h2>
+        <ul class="list">
+          <li>File gérée : annonce si attente &gt; 2 min, orientation vers solution.</li>
+          <li>Présentation : tenue propre, badge visible, plan de vente à jour.</li>
+          <li>Espaces clients : propres, rangés, signalétique claire et conforme.</li>
+          <li>Conformité : prix affichés, mentions obligatoires, sécurité & accessibilité.</li>
+          <li>Up-sell pertinent, jamais forcé ; proposition de service utile (garantie, prise RDV).</li>
+        </ul>
+        <span class="tag warn">Contrôlé en audit</span>
+      </div>
+    </div>
+  </section>
 
-      <a class="back" href="index.html">← Retour à l’accueil</a>
-    </article>
-  </main>
+  <section class="card">
+    <div class="grid g-2">
+      <div>
+        <h2>🚫 Interdits formels</h2>
+        <ul class="list">
+          <li>Regards fuyants, téléphone personnel visible, chewing-gum, propos familiers.</li>
+          <li>Contestation devant le client, renvoi de responsabilité, jugement.</li>
+          <li>Informations trompeuses, prix incohérents, documents obsolètes.</li>
+          <li>Non-respect des règles H&S, confidentialité, RGPD.</li>
+        </ul>
+        <span class="tag bad">Zéro tolérance</span>
+      </div>
+      <div>
+        <h2>🧰 Check-list front & back</h2>
+        <ul class="list">
+          <li><strong>Front :</strong> accueil, tenue, badge, argumentaire, démonstration, encaissement.</li>
+          <li><strong>Back :</strong> stocks, réserves, propreté, affichages obligatoires, extincteurs, issues.</li>
+          <li>PLV/ILV : à jour, placements autorisés, visibilité des prix.</li>
+          <li>Accessibilité : cheminement libre, pentes, toilettes, priorité.</li>
+        </ul>
+        <span class="tag warn">À afficher en magasin</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🧭 Mesure & amélioration continue</h2>
+    <ul class="list">
+      <li><strong>Visites mystère :</strong> posture & expérience réelle mesurées anonymement.</li>
+      <li><strong>Audits qualité :</strong> conformité & sécurité, scoring, dossier de preuves.</li>
+      <li><strong>Rituels :</strong> 5 minutes d’ouverture, auto-check, remontée des irritants.</li>
+      <li><strong>Feedback & coaching :</strong> débrief bienveillant, micro-formations, mentoring.</li>
+      <li><strong>Suivi :</strong> tableau de bord mensuel, objectifs partagés, reconnaissance.</li>
+    </ul>
+
+    <div class="actions">
+      <a class="btn" href="index.html#devis">Je veux déployer la charte</a>
+      <a class="btn" href="audits-qualite.html" style="background:#0e2740">Voir les audits</a>
+    </div>
+  </section>
+
+</main>
+
+<footer style="text-align:center;color:#789;padding:18px 0">© 2025 Claryscope — Charte de comportement & qualité de service</footer>
 </body>
 </html>
 
