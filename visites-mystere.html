@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visites mystère – Claryscope</title>
   <style>
-    :root{--brand:#0d2a4a;--bg:#f4f7fb;--card:#fff;--text:#12243a;--muted:#516b84;--shadow:0 10px 30px rgba(2,18,42,.08);--radius:14px}
+    :root {
+      --brand:#0d2a4a; --bg:#f4f7fb; --card:#fff; --text:#12243a;
+      --muted:#516b84; --shadow:0 10px 30px rgba(2,18,42,.08); --radius:14px;
+    }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
+
     header{background:var(--brand);color:#fff;padding:48px 16px 40px;text-align:center}
     header h1{margin:0 0 10px;font-size:44px}
     header p{margin:0 0 14px;opacity:.95;font-size:18px;max-width:900px;margin-inline:auto;line-height:1.55}
+
     .site-nav{margin-top:18px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
     .site-nav a{color:#fff;opacity:.9;padding:6px 12px;border-radius:8px;text-decoration:none;transition:background .2s}
     .site-nav a:hover,.site-nav a.active{background:rgba(255,255,255,.14);opacity:1}
+
     .wrap{max-width:1050px;margin:-36px auto 56px;padding:0 16px}
     .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 26px 10px}
     .card h2{margin:0 0 18px;font-size:26px;color:var(--brand)}
@@ -21,15 +27,19 @@
     .card p{color:var(--muted)}
     .card ul{margin:10px 0 22px 1.2rem}
     .card li{margin:6px 0;line-height:1.55}
+
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:10px}
     .gallery img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
+
     .back{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;text-decoration:none;padding:12px 16px;border-radius:10px;margin:32px 0 26px}
   </style>
 </head>
 <body>
+
   <header>
     <h1>Visites mystère</h1>
     <p>Scénarios sur mesure, verbatim, preuves et recommandations pour mesurer l’expérience réelle vécue par vos clients.</p>
+
     <nav class="site-nav">
       <a href="index.html">Accueil</a>
       <a href="visites-mystere.html" class="active">Visites</a>
@@ -71,7 +81,7 @@
       <h2>📸 Exemples observés</h2>
       <div class="gallery">
         <div>
-          <img src="https://recholivier-hue.github.io/Claryscope.ch/images/comportement-guichet.png?v=1"
+          <img src="https://recholivier-hue.github.io/Claryscope.ch/images/comportement-guichet.png?v=5"
                alt="Comportements distants ou inadaptés observés au guichet">
           <p class="muted" style="padding:8px">Comportements distants ou inadaptés observés au guichet.</p>
         </div>
